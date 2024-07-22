@@ -1,5 +1,5 @@
 header {
-  min-height: 100vh;
+  height: 70vh;
   padding-top: 7rem;
   overflow: hidden;
 }
@@ -8,6 +8,10 @@ header {
   text-align: center;
   height: 100%;
   position: relative;
+}
+
+.header__container > h3 > span {
+  color: var(--color-primary);
 }
 
 /* ==================== CTA ===================== */
@@ -26,7 +30,7 @@ header {
   gap: 0.8rem;
   position: absolute;
   left: 0;
-  bottom: 3rem;
+  bottom: 0;
 }
 
 .header__socials::after {
@@ -36,28 +40,11 @@ header {
   background: var(--color-primary);
 }
 
-/* ==================== ME IMAGE ===================== */
-.me {
-  background: linear-gradient(var(--color-primary), transparent);
-  width: 22rem;
-  height: 22rem;
-  position: absolute;
-  left: calc(50% - 11rem);
-  margin-top: 4rem;
-  border-radius: 10px;
-  overflow: hidden;
-  padding: 1rem;
-
-  img {
-    border-radius: 10px;
-  }
-}
-
 /* ==================== SCROLL DOWN ===================== */
 .scroll__down {
   position: absolute;
   right: -2.3rem;
-  bottom: 5rem;
+  bottom: 2rem;
   transform: rotate(90deg);
   font-weight: 300;
   font-size: 0.9rem;
@@ -66,17 +53,16 @@ header {
 /* ================= MEDIA QUERIES (MEDIUM DEVICES) ================= */
 @media screen and (max-width: 1024px) {
   header {
-    height: 68vh;
   }
 }
 
 /* ================= MEDIA QUERIES (SMALL DEVICES) ================= */
 @media screen and (max-width: 600px) {
-  header {
+  /* header {
     height: 100vh;
   }
   .header__socials,
   .scroll__down {
     display: none;
-  }
+  } */
 }
