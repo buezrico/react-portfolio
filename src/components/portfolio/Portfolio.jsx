@@ -6,6 +6,7 @@ import valucares from "../../assets/valucares.png";
 import tourafrica from "../../assets/tourafrica.png";
 import synproxi from "../../assets/synproxi.png";
 import insightproxim from "../../assets/insightproxim.png";
+import nkechi from "../../assets/nkechi.png";
 
 const data = [
   {
@@ -36,7 +37,7 @@ const data = [
       "Valucares is an online, real-time healthcare provider. Customers can book appointments for health checks seamlessly.",
   },
   {
-    id: 3,
+    id: 4,
     image: tourafrica,
     title: "TOURAFRICA",
     // github: "https://github.com/igudy/shopiverse",
@@ -45,7 +46,7 @@ const data = [
       "TourAfrica is a comprehensive travel platform that offers curated African travel experiences. Explore and book unique tours, accommodations, and activities with ease.",
   },
   {
-    id: 2,
+    id: 5,
     image: insightproxim,
     title: "INSIGHTPROXIMCONSULTING",
     // github: "https://github.com/igudy/shopiverse",
@@ -54,13 +55,22 @@ const data = [
       "InsightProxim Consulting provides expert guidance and solutions in business strategy and management. Tailored consulting services to help organizations achieve their goals.",
   },
   {
-    id: 2,
+    id: 6,
     image: synproxi,
     title: "SYNPROXI",
     // github: "https://github.com/igudy/shopiverse",
     demo: "https://valucares.com/",
     description:
       "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
+  },
+  {
+    id: 7,
+    image: nkechi,
+    title: "NKECHI KEN",
+    // github: "https://github.com/igudy/shopiverse",
+    demo: "https://nkechikennkwonta.com/",
+    description:
+      "A Portfolio website for Mrs Nkechi Ken. Built with NextJs, TypeScript and Sass.",
   },
 ];
 
