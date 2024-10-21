@@ -46,12 +46,7 @@ const About = () => {
             </article>
           </div>
           <p>
-            Creative software engineer who strongly focuses on developing
-            visually appealing and efficient web applications that drive user
-            growth and engagement. Highly skilled in translating designs into
-            functional code, and collaborating on solutions with the product and
-            server-side teams to offer the best user experience and build higher
-            customer lifetime value.
+            A Passionate developer focused on building engaging web applications and innovative solutions. I specialize in full-stack development using technologies like Next.js, TypeScript, Prisma, and Redis, with a knack for integrating real-time features and scalable platforms. I love creating games, community platforms, and solutions that connect users while maintaining performance and simplicity.
           </p>
           <div className="about-links">
             <a href="#contact" className="btn btn-primary">
