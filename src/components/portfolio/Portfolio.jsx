@@ -14,7 +14,7 @@ const data = [
     image: codeafrica,
     title: "CODE AFRICA",
     // github: "https://github.com/igudy/shopiverse",
-    demo: "https://codeafricang.com/",
+    demo: "https://codeafrica.vercel.com/",
     description:
       "Code Africa is a Next.js and Sass-powered platform for digital skills training. Students can register and pay for courses, it also has an admin dashboard.",
   },
@@ -23,7 +23,7 @@ const data = [
     image: assetplus,
     title: "ASSETPLUS",
     // github: "https://github.com/igudy/shopiverse",
-    demo: "https://assetplusng.com/",
+    demo: "https://assetplus.vercel.com/",
     description:
       "AssetPlus is a premier platform for buying land properties, offering a seamless and secure purchasing experience with a robust search feature.",
   },
@@ -59,7 +59,7 @@ const data = [
     image: synproxi,
     title: "SYNPROXI",
     // github: "https://github.com/igudy/shopiverse",
-    demo: "https://valucares.com/",
+    demo: "https://synproxi.com.ng/",
     description:
       "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
   },
