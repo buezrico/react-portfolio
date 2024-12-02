@@ -11,26 +11,26 @@ import "react-toastify/dist/ReactToastify.css";
 const Contact = () => {
   const form = useRef();
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // const sendEmail = (e) => {
+  //   e.preventDefault();
 
-    emailjs.sendForm(
-      "service_iecm02n",
-      "template_zokpahf",
-      form.current,
-      "HH9WM6g8bCsZSVgWM"
-    );
-    e.target.reset();
+  //   emailjs.sendForm(
+  //     "service_iecm02n",
+  //     "template_zokpahf",
+  //     form.current,
+  //     "HH9WM6g8bCsZSVgWM"
+  //   );
+  //   e.target.reset();
 
-    toast.success("Message sent!", {
-      position: "top-right",
-      autoClose: 3000,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-    });
-  };
+  //   toast.success("Message sent!", {
+  //     position: "top-right",
+  //     autoClose: 3000,
+  //     hideProgressBar: true,
+  //     closeOnClick: true,
+  //     pauseOnHover: true,
+  //     draggable: true,
+  //   });
+  // };
 
   return (
     <section id="contact">
@@ -62,14 +62,14 @@ const Contact = () => {
           <article className="contact__option">
             <BsWhatsapp className="contact__option-icon" />
             <h4>WhatsApp</h4>
-            <h5>+239-81-091-69-579</h5>
+            <h5>+239-810-916-9579</h5>
             <a href="https://wa.link/em6oai" target="_blank" rel="noreferrer">
               Send a Message
             </a>
           </article>
         </div>
         {/* END OF CONTACT OPTIONS */}
-        <form ref={form} onSubmit={sendEmail}>
+        <form>
           <input
             type="text"
             name="name"
