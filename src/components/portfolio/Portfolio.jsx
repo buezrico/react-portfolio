@@ -27,7 +27,7 @@ const data = [
     // github: "https://github.com/igudy/shopiverse",
     demo: "https://thegrandcobbler.com/",
     description:
-      "THE GRAND COBBLER is Lagos's finest and most reliable shoes and leather goods repair company. An on-demand service providing modern aftercare.",
+      "THE GRAND COBBLER is Lagos' finest and most reliable shoes and leather goods repair company. An on-demand service providing modern aftercare.",
   },
   {
     id: 3,
