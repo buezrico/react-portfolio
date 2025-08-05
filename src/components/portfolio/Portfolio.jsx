@@ -63,7 +63,7 @@ const data = [
     id: 7,
     image: insightproxim,
     title: "INSIGHTPROXIMCONSULTING",
-    demo: "https://insightproximconsulting.com.ng/",
+    demo: "https://insightproxim.vercel.app",
     description:
       "InsightProxim Consulting provides expert guidance and solutions in business strategy and management. Tailored consulting services to help organizations achieve their goals.",
   },
