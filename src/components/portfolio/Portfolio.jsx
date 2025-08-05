@@ -71,7 +71,7 @@ const data = [
     id: 8,
     image: synproxi,
     title: "SYNPROXI",
-    demo: "https://synproxi.com.ng/",
+    demo: "https://synproxi.vercel.app/",
     description:
       "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
   },
