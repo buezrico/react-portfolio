@@ -79,7 +79,7 @@ const data = [
     id: 9,
     image: nkechi,
     title: "NKECHI KEN",
-    demo: "https://nkechikennkwonta.com/",
+    demo: "https://nkechikennkwonta.vercel.app/",
     description:
       "A Portfolio website for Mrs Nkechi Ken. Built with NextJs, TypeScript and Sass.",
   },
