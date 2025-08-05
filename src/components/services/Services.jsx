@@ -14,7 +14,7 @@ const Services = () => {
             <h3>
               FRONTEND SOFTWARE ENGINEER <br></br>
               <span className="service__white">
-                MEGANET LIMITED <br></br>(Feb. 2023 - Present)
+                MEGANET LIMITED <br></br>(Feb. 2023 - NOV. 2023)
               </span>
             </h3>
           </div>
