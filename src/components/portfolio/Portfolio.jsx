@@ -47,7 +47,7 @@ const data = [
     id: 5,
     image: valucares,
     title: "VALUCARES",
-    demo: "https://valucares.com/",
+    demo: "https://valucares.vercel.app//",
     description:
       "Valucares is an online, real-time healthcare provider. Customers can book appointments for health checks seamlessly.",
   },
