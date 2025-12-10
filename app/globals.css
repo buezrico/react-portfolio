@@ -1,0 +1,347 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Color mappings */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-dark-bg: #1e1e1e;
+  --color-dark-bg-variant: #161616;
+  --color-dark-bg-variantt: #333333;
+  --color-primary: #f9aa23;
+  --color-primary-variant: rgba(172, 124, 22, 0.862);
+  --color-light: rgba(255, 255, 255, 0.85);
+
+  /* shadcn colors */
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Border radius */
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  /* Font family */
+  --font-sans: "Poppins", ui-sans-serif, system-ui, sans-serif;
+
+  /* Breakpoints */
+  --breakpoint-sm: 600px;
+  --breakpoint-md: 1024px;
+  --breakpoint-lg: 1440px;
+
+  /* Container widths */
+  --container-lg: 75%;
+  --container-md: 86%;
+  --container-sm: 90%;
+
+  /* Transitions */
+  --transition-all: all 400ms ease;
+}
+
+:root {
+  --radius: 0.4rem;
+
+  /* Light theme - default */
+  --background: #ffffff;
+  --foreground: #1e1e1e;
+  --card: #f5f5f5;
+  --card-foreground: #1e1e1e;
+  --popover: #ffffff;
+  --popover-foreground: #1e1e1e;
+  --primary: #f9aa23;
+  --primary-foreground: #ffffff;
+  --secondary: #f0f0f0;
+  --secondary-foreground: #1e1e1e;
+  --muted: #f5f5f5;
+  --muted-foreground: rgba(0, 0, 0, 0.6);
+  --accent: #f9f9f9;
+  --accent-foreground: #1e1e1e;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(0, 0, 0, 0.1);
+  --input: rgba(0, 0, 0, 0.05);
+  --ring: #f9aa23;
+}
+
+.dark {
+  /* Dark theme */
+  --background: #1e1e1e;
+  --foreground: #ffffff;
+  --card: #161616;
+  --card-foreground: #ffffff;
+  --popover: #1e1e1e;
+  --popover-foreground: #ffffff;
+  --primary: #f9aa23;
+  --primary-foreground: #1e1e1e;
+  --secondary: #333333;
+  --secondary-foreground: #ffffff;
+  --muted: #333333;
+  --muted-foreground: rgba(255, 255, 255, 0.85);
+  --accent: #222222;
+  --accent-foreground: #ffffff;
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: rgba(255, 255, 255, 0.1);
+  --input: rgba(255, 255, 255, 0.15);
+  --ring: #f9aa23;
+}
+
+@layer base {
+  * {
+    @apply m-0 p-0 border-0 outline-none box-border list-none;
+    text-decoration: none;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  /* Hide scrollbar */
+  ::-webkit-scrollbar {
+    display: none;
+  }
+
+  body {
+    @apply bg-background text-foreground leading-[1.7];
+    font-family: "Poppins", sans-serif;
+    background-image: url('/bg-texture-light.svg');
+  }
+
+  .dark body {
+    background-image: url('/bg-texture.png');
+  }
+
+  h1, h2, h3, h4, h5 {
+    @apply font-medium;
+  }
+
+  h1 {
+    @apply text-4xl;
+  }
+
+  section {
+    @apply mt-32;
+  }
+
+  section > h2,
+  section > h5 {
+    @apply text-center;
+  }
+
+  section > h5 {
+    @apply text-light;
+  }
+
+  section > h2 {
+    @apply text-primary mb-12;
+  }
+
+  a {
+    @apply text-primary transition-all duration-[400ms];
+  }
+
+  a:hover {
+    @apply text-primary;
+  }
+
+  img {
+    @apply block w-full object-cover;
+  }
+}
+
+@layer utilities {
+  .container-custom {
+    @apply w-[75%] mx-auto;
+  }
+
+  .text-light {
+    color: rgba(0, 0, 0, 0.7);
+  }
+
+  .dark .text-light {
+    color: rgba(255, 255, 255, 0.85);
+  }
+
+  .btn {
+    @apply inline-block text-primary px-5 py-3 rounded-md cursor-pointer border border-primary transition-all duration-[400ms];
+  }
+
+  .btn:hover {
+    @apply bg-primary text-primary-foreground border-transparent;
+  }
+
+  .btn-primary {
+    @apply bg-primary text-primary-foreground;
+  }
+
+  /* Responsive container widths */
+  @media screen and (max-width: 1024px) {
+    .container-custom {
+      @apply w-[86%];
+    }
+
+    section {
+      @apply mt-24;
+    }
+  }
+
+  @media screen and (max-width: 600px) {
+    .container-custom {
+      @apply w-[90%];
+    }
+
+    section > h2 {
+      @apply mb-8;
+    }
+  }
+
+  /* Premium Hero Section Animations */
+  @keyframes blob {
+    0% {
+      transform: translate(0px, 0px) scale(1);
+    }
+    33% {
+      transform: translate(30px, -50px) scale(1.1);
+    }
+    66% {
+      transform: translate(-20px, 20px) scale(0.9);
+    }
+    100% {
+      transform: translate(0px, 0px) scale(1);
+    }
+  }
+
+  .animate-blob {
+    animation: blob 7s infinite;
+  }
+
+  @keyframes gradient {
+    0%, 100% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+  }
+
+  .animate-gradient {
+    background-size: 200% auto;
+    animation: gradient 3s linear infinite;
+  }
+
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-in {
+    animation: fade-in 0.6s ease-out forwards;
+  }
+
+  @keyframes pulse-slow {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.6;
+    }
+  }
+
+  .animate-pulse-slow {
+    animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-20px);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Animation Delay Utilities */
+  .animation-delay-200 {
+    animation-delay: 0.2s;
+  }
+
+  .animation-delay-400 {
+    animation-delay: 0.4s;
+  }
+
+  .animation-delay-600 {
+    animation-delay: 0.6s;
+  }
+
+  .animation-delay-800 {
+    animation-delay: 0.8s;
+  }
+
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+
+  /* Hanging Portrait Swing Animation */
+  @keyframes swing {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(3deg);
+    }
+    75% {
+      transform: rotate(-3deg);
+    }
+  }
+
+  .animate-swing {
+    animation: swing 5s ease-in-out infinite;
+    transform-origin: top center;
+  }
+
+  /* Subtle shadow swing for realistic effect */
+  @keyframes shadow-swing {
+    0%, 100% {
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+    }
+    25% {
+      box-shadow: 10px 20px 40px rgba(0,0,0,0.2);
+    }
+    75% {
+      box-shadow: -10px 20px 40px rgba(0,0,0,0.2);
+    }
+  }
+
+  .animate-shadow-swing {
+    animation: shadow-swing 5s ease-in-out infinite;
+  }
+}
