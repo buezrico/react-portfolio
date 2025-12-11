@@ -75,3 +75,16 @@ export interface ContactFormState {
     message?: string[];
   };
 }
+
+// Testimonial Types
+export interface Testimonial {
+  id: number;
+  quote: string;
+  author: string;
+  role: string;
+  company: string;
+  image?: StaticImageData;
+  rating: number; // 1-5 stars
+  featured?: boolean;
+  date?: string;
+}

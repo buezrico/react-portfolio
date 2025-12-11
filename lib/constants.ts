@@ -1,4 +1,4 @@
-import { PortfolioProject, WorkExperience, Skill, SocialLink, FooterLink } from "./types";
+import { PortfolioProject, WorkExperience, Skill, SocialLink, FooterLink, Testimonial } from "./types";
 import billionbros from "@/public/images/portfolio/billionbros.png";
 import thegrandcobbler from "@/public/images/portfolio/thegrandcobbler.png";
 import codeafrica from "@/public/images/portfolio/codeafrica.png";
@@ -245,3 +245,62 @@ export const contactInfo = {
 
 // Professional Tagline
 export const professionalTagline = "Full-Stack Developer & Creative Problem Solver";
+
+// Testimonials data
+export const testimonials: Testimonial[] = [
+  {
+    id: 1,
+    quote: "Rico's ability to transform complex requirements into clean, performant code is exceptional. His attention to detail and commitment to best practices elevated our entire project.",
+    author: "Sarah Johnson",
+    role: "Product Manager",
+    company: "TechVenture Inc.",
+    rating: 5,
+    featured: true,
+    date: "Dec 2024"
+  },
+  {
+    id: 2,
+    quote: "Working with Rico was a game-changer. He delivered a full-stack solution ahead of schedule without compromising on quality. His technical expertise is unmatched.",
+    author: "Michael Chen",
+    role: "CTO",
+    company: "DataFlow Systems",
+    rating: 5,
+    date: "Nov 2024"
+  },
+  {
+    id: 3,
+    quote: "Outstanding work on our e-commerce platform. Rico's expertise in Next.js and TypeScript helped us achieve exceptional performance and user experience.",
+    author: "David Williams",
+    role: "Senior Developer",
+    company: "ShopFlow Tech",
+    rating: 5,
+    date: "Oct 2024"
+  },
+  {
+    id: 4,
+    quote: "Professional, responsive, and highly skilled. Rico transformed our legacy system into a modern, scalable application. Highly recommended!",
+    author: "Emily Rodriguez",
+    role: "Engineering Lead",
+    company: "CloudNine Solutions",
+    rating: 5,
+    date: "Sep 2024"
+  },
+  {
+    id: 5,
+    quote: "Rico's full-stack capabilities are impressive. He seamlessly handled both frontend and backend development, delivering a robust and elegant solution.",
+    author: "James Anderson",
+    role: "Tech Lead",
+    company: "Innovation Labs",
+    rating: 5,
+    date: "Aug 2024"
+  },
+  {
+    id: 6,
+    quote: "Exceptional problem-solving skills and clean code architecture. Rico went above and beyond to ensure our project's success.",
+    author: "Lisa Thompson",
+    role: "Project Director",
+    company: "Digital Dynamics",
+    rating: 5,
+    date: "Jul 2024"
+  }
+];
