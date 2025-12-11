@@ -24,7 +24,7 @@ export function Footer() {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-gray-100 via-gray-50 to-white text-foreground dark:from-gray-950 dark:via-gray-900 dark:to-black dark:text-white overflow-hidden mt-32 border-t border-border"
+      className="relative bg-gradient-to-br from-gray-100 via-gray-50 to-white text-foreground dark:from-gray-950 dark:via-gray-900 dark:to-black dark:text-white overflow-hidden mt-24 border-t border-border"
       role="contentinfo"
     >
       {/* Background decorations */}
@@ -82,11 +82,39 @@ export function Footer() {
                 About Me
               </h3>
             </div>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed mb-4">
               Passionate full-stack developer specializing in Next.js,
               TypeScript, and modern web technologies. I create fast, engaging,
               and user-friendly applications that solve real-world problems.
             </p>
+
+            {/* Social Icons */}
+            <div className="flex flex-wrap justify-center md:justify-start gap-2">
+              {socialLinks.map((social, index) => {
+                const Icon = social.icon;
+                return (
+                  <motion.a
+                    key={social.name}
+                    href={social.url}
+                    target={social.url.startsWith("mailto:") ? undefined : "_blank"}
+                    rel={social.url.startsWith("mailto:") ? undefined : "noreferrer"}
+                    aria-label={social.ariaLabel}
+                    className={`relative group p-2 rounded-lg bg-gradient-to-br ${social.gradient} backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background`}
+                    whileHover={{ scale: 1.08, rotate: 5 }}
+                    whileTap={{ scale: 0.95 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    style={{ transitionDelay: `${index * 0.08}s` }}
+                  >
+                    <Icon className="text-white text-base relative z-10" />
+                    {/* Shine effect */}
+                    <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/30 to-white/0 opacity-0 group-hover:opacity-100 rounded-lg transition-opacity duration-300" />
+                  </motion.a>
+                );
+              })}
+            </div>
           </div>
 
           {/* Quick Links Column */}
@@ -159,45 +187,6 @@ export function Footer() {
                 </span>
               </div>
             </div>
-          </div>
-        </motion.div>
-
-        {/* Social Media Section */}
-        <motion.div
-          className="mb-8"
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: "-100px" }}
-          transition={{ duration: 0.6, delay: 0.4 }}
-        >
-          <div
-            className="flex flex-wrap justify-center gap-3"
-            aria-label="Social Media Links"
-          >
-            {socialLinks.map((social, index) => {
-              const Icon = social.icon;
-              return (
-                <motion.a
-                  key={social.name}
-                  href={social.url}
-                  target={social.url.startsWith("mailto:") ? undefined : "_blank"}
-                  rel={social.url.startsWith("mailto:") ? undefined : "noreferrer"}
-                  aria-label={social.ariaLabel}
-                  className={`relative group p-3 rounded-xl bg-gradient-to-br ${social.gradient} backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background`}
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  whileTap={{ scale: 0.95 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                  initial={{ opacity: 0, y: 20 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  style={{ transitionDelay: `${index * 0.1}s` }}
-                >
-                  <Icon className="text-white text-xl relative z-10" />
-                  {/* Enhanced shine effect */}
-                  <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/30 to-white/0 opacity-0 group-hover:opacity-100 rounded-xl transition-opacity duration-300" />
-                </motion.a>
-              );
-            })}
           </div>
         </motion.div>
 
