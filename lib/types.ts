@@ -40,6 +40,8 @@ export interface SocialLink {
   name: string;
   url: string;
   icon: React.ComponentType<{ className?: string; size?: number }>;
+  gradient: string;
+  ariaLabel: string;
 }
 
 // Navigation Types
@@ -47,6 +49,13 @@ export interface NavItem {
   id: string;
   label: string;
   icon: React.ComponentType<{ className?: string; size?: number }>;
+  href: string;
+}
+
+// Footer Link Types
+export interface FooterLink {
+  id: string;
+  label: string;
   href: string;
 }
 

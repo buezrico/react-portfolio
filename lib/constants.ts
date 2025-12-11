@@ -1,4 +1,4 @@
-import { PortfolioProject, WorkExperience, Skill } from "./types";
+import { PortfolioProject, WorkExperience, Skill, SocialLink, FooterLink } from "./types";
 import billionbros from "@/public/images/portfolio/billionbros.png";
 import thegrandcobbler from "@/public/images/portfolio/thegrandcobbler.png";
 import codeafrica from "@/public/images/portfolio/codeafrica.png";
@@ -9,6 +9,8 @@ import insightproxim from "@/public/images/portfolio/insightproxim.png";
 import synproxi from "@/public/images/portfolio/synproxi.png";
 import nkechi from "@/public/images/portfolio/nkechi.png";
 import medhub from "@/public/images/portfolio/medhub.png";
+import { BsLinkedin, BsGithub, BsWhatsapp, BsTwitterX } from "react-icons/bs";
+import { MdEmail } from "react-icons/md";
 
 // Portfolio projects data
 export const portfolioProjects: PortfolioProject[] = [
@@ -184,3 +186,62 @@ export const skills: Skill[] = [
   { id: 33, name: "Yarn", category: "tools" },
   { id: 34, name: "pnpm", category: "tools" },
 ];
+
+// Social Media Links
+export const socialLinks: SocialLink[] = [
+  {
+    name: "LinkedIn",
+    url: "https://www.linkedin.com/in/chibueze-okoronkwo/",
+    icon: BsLinkedin,
+    gradient: "from-blue-600 to-blue-400",
+    ariaLabel: "Visit LinkedIn profile",
+  },
+  {
+    name: "GitHub",
+    url: "http://github.com/buezrico",
+    icon: BsGithub,
+    gradient: "from-gray-700 to-gray-500",
+    ariaLabel: "Visit GitHub profile",
+  },
+  {
+    name: "Email",
+    url: "mailto:chibueze@buezrico.com",
+    icon: MdEmail,
+    gradient: "from-red-600 to-orange-400",
+    ariaLabel: "Send an email",
+  },
+  {
+    name: "WhatsApp",
+    url: "https://wa.link/em6oai",
+    icon: BsWhatsapp,
+    gradient: "from-green-600 to-emerald-400",
+    ariaLabel: "Contact via WhatsApp",
+  },
+  {
+    name: "Twitter/X",
+    url: "https://twitter.com/buezrico",
+    icon: BsTwitterX,
+    gradient: "from-gray-800 to-gray-600",
+    ariaLabel: "Follow on Twitter",
+  },
+];
+
+// Footer Navigation Links
+export const footerNavLinks: FooterLink[] = [
+  { id: "home", label: "Home", href: "#" },
+  { id: "about", label: "About", href: "#about" },
+  { id: "work-experience", label: "Experience", href: "#work-experience" },
+  { id: "portfolio", label: "Portfolio", href: "#portfolio" },
+  { id: "skills", label: "Skills", href: "#skills" },
+  { id: "contact", label: "Contact", href: "#contact" },
+];
+
+// Contact Info
+export const contactInfo = {
+  email: "chibueze@buezrico.com",
+  phone: "+239-810-916-9579",
+  location: "Lagos, Nigeria",
+};
+
+// Professional Tagline
+export const professionalTagline = "Full-Stack Developer & Creative Problem Solver";
