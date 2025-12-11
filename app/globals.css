@@ -377,4 +377,19 @@
   .animate-shimmer {
     animation: shimmer 2s linear infinite;
   }
+
+  /* Carousel Scrollbar Hiding */
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* iOS momentum scrolling */
+  .snap-x {
+    -webkit-overflow-scrolling: touch;
+  }
 }
