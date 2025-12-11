@@ -8,8 +8,11 @@ export function ThemeScript() {
           if (theme === 'light' || theme === 'dark') {
             return theme;
           }
-          if (theme === 'system' || !theme) {
+          if (theme === 'system') {
             return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+          }
+          if (!theme) {
+            return 'dark';
           }
         } catch (e) {}
         return 'dark'; // Fallback

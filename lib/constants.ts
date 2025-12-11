@@ -8,11 +8,30 @@ import tourafrica from "@/public/images/portfolio/tourafrica.png";
 import insightproxim from "@/public/images/portfolio/insightproxim.png";
 import synproxi from "@/public/images/portfolio/synproxi.png";
 import nkechi from "@/public/images/portfolio/nkechi.png";
+import medhub from "@/public/images/portfolio/medhub.png";
 
 // Portfolio projects data
 export const portfolioProjects: PortfolioProject[] = [
   {
     id: 1,
+    image: medhub,
+    title: "MEDHUB",
+    demo: "https://medhub.com/",
+    description:
+      "MedHub is an integrated online platform for leading diagnostic centers in Nigeria who offer comprehensive medical test services with advanced technology. ",
+    technologies: ["Next.js, Typescript, Tailwindcss, Shadcn, Zustand, Prisma"],
+  },
+  {
+    id: 2,
+    image: assetplus,
+    title: "ASSETPLUS",
+    demo: "https://assetplusng.com",
+    description:
+      "Nigeria's leading Real Estate Financing company providing finance for dream houses and landed properties in Nigeria and in diaspora.",
+    technologies: ["Next.js, Typescript, Tailwindcss, Shadcn, Zustand, Prisma"],
+  },
+  {
+    id: 4,
     image: billionbros,
     title: "BILLION BROS",
     demo: "https://billionbros.ng/",
@@ -21,7 +40,7 @@ export const portfolioProjects: PortfolioProject[] = [
     technologies: ["Next.js", "TypeScript", "Prisma"],
   },
   {
-    id: 2,
+    id: 3,
     image: thegrandcobbler,
     title: "THE GRAND COBBLER",
     demo: "https://thegrandcobbler.com/",
@@ -30,7 +49,7 @@ export const portfolioProjects: PortfolioProject[] = [
     technologies: ["Next.js", "TypeScript"],
   },
   {
-    id: 3,
+    id: 5,
     image: codeafrica,
     title: "CODE AFRICA",
     demo: "https://codeafrica.vercel.app/",
@@ -39,52 +58,43 @@ export const portfolioProjects: PortfolioProject[] = [
     technologies: ["Next.js", "Sass"],
   },
   {
-    id: 4,
-    image: assetplus,
-    title: "ASSETPLUS",
-    demo: "https://assetplus.vercel.app/",
-    description:
-      "AssetPlus is a premier platform for buying land properties, offering a seamless and secure purchasing experience with a robust search feature.",
-    technologies: ["Next.js"],
-  },
-  {
-    id: 5,
+    id: 6,
     image: valucares,
     title: "VALUCARES",
     demo: "https://valucares.vercel.app//",
     description:
       "Valucares is an online, real-time healthcare provider. Customers can book appointments for health checks seamlessly.",
-    technologies: ["Next.js"],
+    technologies: ["Next.js, Typescript, Sass"],
   },
   {
-    id: 6,
+    id: 7,
     image: tourafrica,
     title: "TOURAFRICA",
     demo: "https://tourafrica.vercel.app",
     description:
       "TourAfrica is a comprehensive travel platform that offers curated African travel experiences. Explore and book unique tours, accommodations, and activities with ease.",
-    technologies: ["Next.js"],
+    technologies: ["Next.js. Typescript, Sass"],
   },
   {
-    id: 7,
+    id: 8,
     image: insightproxim,
     title: "INSIGHTPROXIMCONSULTING",
     demo: "https://insightproxim.vercel.app",
     description:
       "InsightProxim Consulting provides expert guidance and solutions in business strategy and management. Tailored consulting services to help organizations achieve their goals.",
-    technologies: ["Next.js"],
+    technologies: ["Next.js, Typescript, Sass"],
   },
   {
-    id: 8,
+    id: 9,
     image: synproxi,
     title: "SYNPROXI",
     demo: "https://synproxi.vercel.app/",
     description:
       "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
-    technologies: ["Next.js"],
+    technologies: ["Next.js, Typescript, Tailwindcss"],
   },
   {
-    id: 9,
+    id: 10,
     image: nkechi,
     title: "NKECHI KEN",
     demo: "https://nkechikennkwonta.vercel.app/",

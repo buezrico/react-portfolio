@@ -11,7 +11,7 @@ interface ThemeProviderProps {
 }
 
 export function ThemeProvider({ children }: ThemeProviderProps) {
-  const [theme, setThemeState] = useState<Theme>('system')
+  const [theme, setThemeState] = useState<Theme>('dark')
   const [mounted, setMounted] = useState(false)
 
   // Get the resolved theme (actual light or dark, not system)
@@ -33,7 +33,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     if (storedTheme && ['light', 'dark', 'system'].includes(storedTheme)) {
       setThemeState(storedTheme)
     } else {
-      setThemeState('system')
+      setThemeState('dark')
     }
     setMounted(true)
   }, [])

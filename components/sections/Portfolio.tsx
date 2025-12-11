@@ -1,13 +1,11 @@
 "use client";
 
 import Image from "next/image";
-import { motion } from "framer-motion";
 import { AnimatedSectionHeading } from "@/components/shared/AnimatedSectionHeading";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { portfolioProjects } from "@/lib/constants";
-import { viewportOptions } from "@/lib/animations";
-import { BsArrowUpRight, BsGithub } from "react-icons/bs";
+import { BsArrowUpRight } from "react-icons/bs";
 
 export function Portfolio() {
   // Featured project (first one)
@@ -27,13 +25,7 @@ export function Portfolio() {
 
       <div className="container-custom">
         {/* Featured Project - Large Showcase */}
-        <motion.div
-          initial={{ opacity: 0, y: 60 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewportOptions}
-          transition={{ duration: 0.8, ease: 'easeOut' }}
-          className="mb-16"
-        >
+        <div className="mb-16">
           <div className="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-card via-card/95 to-card border border-primary/20 shadow-2xl hover:shadow-primary/20 transition-all duration-700">
             {/* Decorative corner accent */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-[100px] z-10" />
@@ -62,12 +54,7 @@ export function Portfolio() {
 
               {/* Content Side */}
               <div className="relative p-8 lg:p-12 flex flex-col justify-center">
-                <motion.div
-                  initial={{ opacity: 0, x: 30 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={viewportOptions}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                >
+                <div>
                   <h3 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
                     {featuredProject.title}
                   </h3>
@@ -99,29 +86,19 @@ export function Portfolio() {
                       </a>
                     </Button>
                   </div>
-                </motion.div>
+                </div>
               </div>
             </div>
 
             {/* Bottom glow effect */}
             <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent" />
           </div>
-        </motion.div>
+        </div>
 
         {/* Regular Projects Grid - 3 Columns */}
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {regularProjects.map((project, index) => (
-            <motion.div
-              key={project.id}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={viewportOptions}
-              transition={{
-                duration: 0.6,
-                delay: index * 0.1,
-                ease: 'easeOut'
-              }}
-            >
+            <div key={project.id}>
               <div className="group relative h-full rounded-2xl overflow-hidden bg-gradient-to-br from-card via-card to-card/95 border border-primary/20 hover:border-primary/40 shadow-lg hover:shadow-2xl hover:shadow-primary/10 transition-all duration-500">
                 {/* Project Number Badge */}
                 <div className="absolute top-4 left-4 w-10 h-10 rounded-full bg-primary/90 backdrop-blur-sm flex items-center justify-center z-20 group-hover:scale-110 transition-transform duration-300">
@@ -188,7 +165,7 @@ export function Portfolio() {
                 {/* Top accent line */}
                 <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-primary to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
       </div>
