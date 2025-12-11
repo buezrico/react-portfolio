@@ -17,8 +17,8 @@ const contactOptions = [
   {
     icon: MdOutlineEmail,
     title: "Email",
-    value: "buezokoronkwo@gmail.com",
-    link: "mailto:buezokoronkwo@gmail.com",
+    value: "chibueze@buezrico.com",
+    link: "mailto:chibueze@buezrico.com",
     gradient: "from-blue-500 to-cyan-500",
     bgGradient: "from-blue-500/10 to-cyan-500/10"
   },
