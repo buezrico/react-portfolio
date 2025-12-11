@@ -16,14 +16,6 @@ export function Header() {
 
   return (
     <header className="h-[45vh] min-h-[400px] pt-20 pb-8 overflow-hidden relative">
-      {/* Floating decorative elements */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        {/* Original floating dots */}
-        <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-primary rounded-full animate-float opacity-60" />
-        <div className="absolute top-1/3 right-1/3 w-3 h-3 bg-primary/40 rounded-full animate-float animation-delay-2000 opacity-40" />
-        <div className="absolute bottom-1/4 right-1/4 w-2 h-2 bg-primary/60 rounded-full animate-float animation-delay-4000 opacity-50" />
-      </div>
-
       {/* Social icons - LEFT SIDE with glassmorphism */}
       <div className="hidden md:flex absolute md:left-[7%] lg:left-[12.5%] top-1/2 -translate-y-1/2 flex-col gap-4 opacity-0 animate-fade-in animation-delay-800">
         <a
