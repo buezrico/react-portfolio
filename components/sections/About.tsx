@@ -11,12 +11,12 @@ const stats = [
   {
     icon: FaAward,
     title: "Experience",
-    value: "4+ Years Working",
+    value: "5+ Years Coding",
   },
   {
     icon: AiFillGithub,
     title: "Github Repos",
-    value: "70+ Repositories",
+    value: "40+ Repositories",
   },
   {
     icon: FiUsers,
@@ -72,9 +72,7 @@ export function About() {
                     <Card className="bg-primary/5 border-primary/10 p-4 text-center hover:bg-primary/10 transition-colors duration-[400ms]">
                       <Icon className="text-primary text-2xl mx-auto mb-0" />
                       <h5 className="text-sm font-medium mb-0">{stat.title}</h5>
-                      <small className="text-xs text-light">
-                        {stat.value}
-                      </small>
+                      <small className="text-xs text-light">{stat.value}</small>
                     </Card>
                   </div>
                 );
@@ -83,12 +81,14 @@ export function About() {
 
             {/* Description */}
             <p className="text-light mb-8 leading-relaxed text-center">
-              A Passionate developer focused on building engaging web applications and
-              innovative solutions. I specialize in full-stack development using technologies
-              like Next.js, TypeScript, Prisma, and Redis, with a knack for integrating
-              real-time features and scalable platforms. I love creating games, community
-              platforms, and solutions that connect users while maintaining performance and
-              simplicity.
+              👋 Hi, I’m a developer who enjoys building clean, engaging web
+              applications and trying out new ideas. I work mainly with Next.js,
+              TypeScript, and NestJS, and I like creating things that feel fast,
+              smooth, and simple to use. I’ve built everything from small games
+              to community platforms and real-time features, and I really enjoy
+              taking an idea and turning it into something people can interact
+              with. Performance and a good user experience are always a big
+              focus for me.
             </p>
 
             {/* CTA Buttons */}
@@ -107,7 +107,11 @@ export function About() {
                   Github
                 </a>
               </Button>
-              <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <Button
+                asChild
+                size="lg"
+                className="bg-primary hover:bg-primary/90"
+              >
                 <a
                   href="https://www.linkedin.com/in/chibueze-okoronkwo/"
                   target="_blank"

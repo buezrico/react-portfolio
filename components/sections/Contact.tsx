@@ -92,12 +92,12 @@ export function Contact() {
       <AnimatedSectionHeading subtitle="Let's Connect" title="Get In Touch" />
 
       <div className="container-custom max-w-6xl">
-        <div className="grid lg:grid-cols-[40%_55%] gap-12 items-start">
+        <div className="grid lg:grid-cols-2 md:grid-cols-1 gap-12 items-start overflow-hidden">
           {/* Contact Options */}
           <div className="space-y-6">
             {/* Intro Text */}
             <motion.div
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.01 }}
               transition={{ duration: 0.3 }}
               className="mb-8"
             >
@@ -116,7 +116,7 @@ export function Contact() {
               return (
                 <motion.div
                   key={option.title}
-                  whileHover={{ y: -8, scale: 1.02 }}
+                  whileHover={{ y: -8, scale: 1.01 }}
                   transition={{ duration: 0.3 }}
                 >
                   <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm shadow-lg hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group">
@@ -154,14 +154,14 @@ export function Contact() {
 
           {/* Contact Form */}
           <motion.div
-            whileHover={{ scale: 1.01 }}
+            whileHover={{ scale: 1.005 }}
             transition={{ duration: 0.3 }}
           >
             <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-sm shadow-xl">
               {/* Top gradient accent */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
 
-              <div className="p-8">
+              <div className="p-6">
                 <h3 className="text-2xl font-bold mb-2 text-foreground">Send Me a Message</h3>
                 <p className="text-light text-sm mb-6">Fill out the form below and I'll get back to you as soon as possible.</p>
 
