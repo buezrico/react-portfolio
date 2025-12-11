@@ -1,48 +1,26 @@
 "use client";
 
-import { motion } from "framer-motion";
 import Image from "next/image";
 import { AnimatedSectionHeading } from "@/components/shared/AnimatedSectionHeading";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { testimonials } from "@/lib/constants";
-import { BsStarFill, BsQuote } from "react-icons/bs";
-import { staggerContainer, staggerItem } from "@/lib/animations";
+import { BsStarFill } from "react-icons/bs";
 import { useRef, useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 
-// Star Rating Component with Stagger Animation
+// Star Rating Component
 const StarRating = ({ rating }: { rating: number }) => (
-  <motion.div
-    className="flex gap-1"
-    aria-label={`${rating} out of 5 stars`}
-    initial="hidden"
-    whileInView="visible"
-    viewport={{ once: true }}
-    variants={{
-      visible: {
-        transition: {
-          staggerChildren: 0.1
-        }
-      }
-    }}
-  >
+  <div className="flex gap-1" aria-label={`${rating} out of 5 stars`}>
     {[...Array(5)].map((_, i) => (
-      <motion.div
+      <BsStarFill
         key={i}
-        variants={{
-          hidden: { opacity: 0, scale: 0 },
-          visible: { opacity: 1, scale: 1 }
-        }}
-      >
-        <BsStarFill
-          className={`${
-            i < rating ? "text-primary" : "text-muted-foreground/30"
-          } text-sm`}
-        />
-      </motion.div>
+        className={`${
+          i < rating ? "text-primary" : "text-muted-foreground/30"
+        } text-sm`}
+      />
     ))}
-  </motion.div>
+  </div>
 );
 
 export function Testimonials() {
@@ -128,16 +106,6 @@ export function Testimonials() {
       aria-label="Client testimonials"
       role="region"
     >
-      {/* Background decorations */}
-      <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl" />
-        <div className="absolute top-1/2 right-1/3 w-64 h-64 bg-primary/3 rounded-full blur-3xl" />
-        <div className="absolute bottom-1/3 left-1/2 w-80 h-80 bg-primary/4 rounded-full blur-3xl" />
-        {/* Mesh gradient overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(249,170,35,0.03),transparent_50%)]" />
-      </div>
-
       <AnimatedSectionHeading
         subtitle="Client Feedback"
         title="Testimonials"
@@ -146,7 +114,7 @@ export function Testimonials() {
       <div className="container-custom max-w-6xl">
         {/* Navigation Buttons - Top Right */}
         <div className="flex justify-end gap-3 mb-8">
-          <motion.button
+          <button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
             aria-label="Previous testimonial"
@@ -157,14 +125,11 @@ export function Testimonials() {
                        disabled:opacity-40 disabled:cursor-not-allowed
                        shadow-lg hover:shadow-xl hover:shadow-primary/20
                        transition-all duration-300"
-            whileHover={{ scale: 1.1, x: -2 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <ChevronLeft className="w-6 h-6 text-primary" />
-          </motion.button>
+          </button>
 
-          <motion.button
+          <button
             onClick={scrollNext}
             disabled={!canScrollNext}
             aria-label="Next testimonial"
@@ -175,12 +140,9 @@ export function Testimonials() {
                        disabled:opacity-40 disabled:cursor-not-allowed
                        shadow-lg hover:shadow-xl hover:shadow-primary/20
                        transition-all duration-300"
-            whileHover={{ scale: 1.1, x: 2 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <ChevronRight className="w-6 h-6 text-primary" />
-          </motion.button>
+          </button>
         </div>
 
         {/* Carousel Container */}
@@ -197,18 +159,8 @@ export function Testimonials() {
             }}
           >
             {allTestimonials.map((testimonial, index) => (
-              <motion.div
+              <div
                 key={testimonial.id}
-                custom={index}
-                initial={{ opacity: 0, scale: 0.95, y: 40 }}
-                whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                viewport={{ once: true, margin: "-50px" }}
-                transition={{
-                  delay: index * 0.1,
-                  duration: 0.6,
-                  ease: [0.22, 1, 0.36, 1]
-                }}
-                whileHover={{ y: -10, scale: 1.02, rotateZ: 0.5 }}
                 className="snap-start flex-shrink-0
                            w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)]"
               >
@@ -216,18 +168,14 @@ export function Testimonials() {
                                bg-gradient-to-br from-card via-card to-card/95
                                backdrop-blur-xl shadow-lg
                                hover:shadow-2xl hover:shadow-primary/10
-                               transition-all duration-500 group h-full flex flex-col">
+                               transition-shadow duration-300 h-full flex flex-col">
                   {/* Top accent line */}
                   <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
 
                   <div className="p-6 flex flex-col flex-1">
                     {/* Avatar */}
                     {testimonial.image && (
-                      <motion.div
-                        className="relative w-20 h-20 md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] mx-auto mb-4"
-                        whileHover={{ scale: 1.08, rotate: 3 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
+                      <div className="relative w-20 h-20 md:w-[100px] md:h-[100px] lg:w-[120px] lg:h-[120px] mx-auto mb-4">
                         <Image
                           src={testimonial.image}
                           alt={testimonial.author}
@@ -236,7 +184,7 @@ export function Testimonials() {
                           sizes="(max-width: 768px) 80px, (max-width: 1024px) 100px, 120px"
                         />
                         <div className="absolute inset-0 rounded-full ring-3 ring-primary/25 shadow-xl shadow-primary/20" />
-                      </motion.div>
+                      </div>
                     )}
 
                     {/* Rating */}
@@ -275,37 +223,32 @@ export function Testimonials() {
                     </div>
                   </div>
 
-                  {/* Bottom shine */}
-                  <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </Card>
-              </motion.div>
+              </div>
             ))}
           </div>
 
           {/* Dot Indicators */}
           <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Carousel pages">
             {allTestimonials.map((_, index) => (
-              <motion.button
+              <button
                 key={index}
                 onClick={() => scrollToCard(index)}
                 aria-label={`Go to testimonial ${index + 1}`}
                 aria-current={currentCardIndex === index ? "true" : "false"}
                 className="relative"
-                whileHover={{ scale: 1.2 }}
-                whileTap={{ scale: 0.9 }}
               >
-                <motion.div
-                  className="rounded-full transition-colors"
-                  animate={{
+                <div
+                  className="rounded-full transition-all duration-300"
+                  style={{
                     width: currentCardIndex === index ? 32 : 8,
                     height: 8,
                     backgroundColor: currentCardIndex === index
                       ? 'hsl(var(--primary))'
                       : 'hsl(var(--primary) / 0.3)'
                   }}
-                  transition={{ type: "spring", stiffness: 300, damping: 20 }}
                 />
-              </motion.button>
+              </button>
             ))}
           </div>
 
