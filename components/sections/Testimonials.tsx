@@ -46,8 +46,8 @@ const StarRating = ({ rating }: { rating: number }) => (
 );
 
 export function Testimonials() {
-  const featured = testimonials.find((t) => t.featured);
-  const regular = testimonials.filter((t) => !t.featured);
+  // Show all testimonials in carousel (no featured distinction)
+  const allTestimonials = testimonials;
 
   // Carousel state management
   const carouselRef = useRef<HTMLDivElement>(null);
@@ -98,7 +98,7 @@ export function Testimonials() {
 
   const scrollPrev = () => scrollToPage(Math.max(0, currentPage - 1));
   const scrollNext = () => {
-    const maxPage = Math.ceil(regular.length / cardsPerView) - 1;
+    const maxPage = Math.ceil(allTestimonials.length / cardsPerView) - 1;
     scrollToPage(Math.min(maxPage, currentPage + 1));
   };
 
@@ -136,82 +136,6 @@ export function Testimonials() {
       />
 
       <div className="container-custom max-w-6xl">
-        {/* Featured Testimonial */}
-        {featured && featured.image && (
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.6 }}
-            className="mb-16"
-          >
-            <motion.div
-              whileHover={{ y: -12, scale: 1.01, rotateY: 1 }}
-              transition={{ type: "spring", stiffness: 300, damping: 20 }}
-            >
-              <Card className="relative overflow-hidden border-primary/20 bg-gradient-to-br from-card via-card to-card/95 backdrop-blur-2xl shadow-xl hover:shadow-2xl hover:shadow-primary/20 transition-all duration-500 group">
-                {/* Top accent line */}
-                <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
-
-                <div className="grid grid-cols-1 md:grid-cols-[280px_1fr] lg:grid-cols-[350px_1fr] gap-6 md:gap-8 p-8 md:p-10">
-                  {/* Left: Avatar */}
-                  <div className="flex flex-col items-center">
-                    <motion.div
-                      className="relative w-48 h-48 md:w-[280px] md:h-[280px] lg:w-[300px] lg:h-[300px] mb-4"
-                      whileHover={{ scale: 1.05, rotate: 2 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      <Image
-                        src={featured.image}
-                        alt={featured.author}
-                        fill
-                        className="object-cover rounded-full"
-                        sizes="(max-width: 768px) 192px, (max-width: 1024px) 280px, 300px"
-                      />
-                      <div className="absolute inset-0 rounded-full ring-4 ring-primary/40 shadow-2xl shadow-primary/30" />
-                    </motion.div>
-                    <StarRating rating={featured.rating} />
-                  </div>
-
-                  {/* Right: Content */}
-                  <div>
-                    <motion.div
-                      whileHover={{ scale: 1.1, rotate: -5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                      className="inline-block"
-                    >
-                      <BsQuote className="text-4xl md:text-5xl text-primary/20 mb-4" />
-                    </motion.div>
-                    <blockquote className="text-2xl md:text-3xl lg:text-4xl italic text-foreground leading-tight tracking-tight mb-6">
-                      "{featured.quote}"
-                    </blockquote>
-                    <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/40 mb-4" />
-                    <div>
-                      <h4 className="font-bold text-lg text-foreground mb-1">
-                        {featured.author}
-                      </h4>
-                      <p className="text-sm text-light mb-2">
-                        {featured.role} at {featured.company}
-                      </p>
-                      {featured.date && (
-                        <Badge
-                          variant="outline"
-                          className="text-xs border-primary/30 text-primary"
-                        >
-                          {featured.date}
-                        </Badge>
-                      )}
-                    </div>
-                  </div>
-                </div>
-
-                {/* Bottom shine effect */}
-                <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-              </Card>
-            </motion.div>
-          </motion.div>
-        )}
-
         {/* Premium Carousel */}
         <div className="relative group/carousel">
           {/* Previous Button */}
@@ -246,7 +170,7 @@ export function Testimonials() {
               msOverflowStyle: 'none'
             }}
           >
-            {regular.map((testimonial, index) => (
+            {allTestimonials.map((testimonial, index) => (
               <motion.div
                 key={testimonial.id}
                 custom={index}
@@ -260,7 +184,7 @@ export function Testimonials() {
                 }}
                 whileHover={{ y: -10, scale: 1.02, rotateZ: 0.5 }}
                 className="snap-start flex-shrink-0
-                           w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)]"
+                           w-full md:w-[calc(60%-1rem)] lg:w-[calc(38%-1rem)]"
               >
                 <Card className="relative overflow-hidden border-primary/20
                                bg-gradient-to-br from-card via-card to-card/95
@@ -356,7 +280,7 @@ export function Testimonials() {
           {/* Dot Indicators */}
           <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Carousel pages">
             {Array.from({
-              length: Math.ceil(regular.length / cardsPerView)
+              length: Math.ceil(allTestimonials.length / cardsPerView)
             }).map((_, index) => (
               <motion.button
                 key={index}
@@ -390,8 +314,8 @@ export function Testimonials() {
             className="sr-only"
           >
             Showing testimonials {currentPage * cardsPerView + 1} to{" "}
-            {Math.min((currentPage + 1) * cardsPerView, regular.length)} of{" "}
-            {regular.length}
+            {Math.min((currentPage + 1) * cardsPerView, allTestimonials.length)} of{" "}
+            {allTestimonials.length}
           </div>
         </div>
       </div>
