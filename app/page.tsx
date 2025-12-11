@@ -17,7 +17,7 @@ export default function Home() {
         {/* HEADER SECTION BUBBLES (0-14%) - 6 bubbles */}
         <div className="absolute top-[2%] left-[4%] w-[45px] h-[45px] opacity-30 animate-float" style={{borderRadius: '60% 40% 30% 70% / 60% 30% 70% 40%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="45px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="45px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -29,7 +29,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[5%] left-[8%] w-[38px] h-[42px] opacity-28 animate-float animation-delay-1200 hidden lg:block" style={{borderRadius: '70% 30% 50% 50% / 40% 50% 50% 60%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="40px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="40px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -41,7 +41,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[9%] left-[2%] w-[35px] h-[38px] opacity-25 animate-float animation-delay-1600 hidden md:block" style={{borderRadius: '50% 50% 40% 60% / 50% 60% 40% 50%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="36px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="36px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -55,7 +55,7 @@ export default function Home() {
         {/* ABOUT SECTION BUBBLES (14-28%) - 6 bubbles */}
         <div className="absolute top-[16%] left-[5%] w-[42px] h-[46px] opacity-29 animate-float animation-delay-600" style={{borderRadius: '55% 45% 60% 40% / 50% 50% 50% 50%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="44px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="44px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -67,7 +67,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[18%] left-[1%] w-[36px] h-[40px] opacity-27 animate-float animation-delay-2200 hidden lg:block" style={{borderRadius: '45% 55% 50% 50% / 45% 60% 40% 55%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="38px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="38px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -79,7 +79,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[22%] left-[7%] w-[39px] h-[41px] opacity-28 animate-float animation-delay-1800 hidden md:block" style={{borderRadius: '62% 38% 42% 58% / 48% 52% 48% 52%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="40px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="40px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -93,7 +93,7 @@ export default function Home() {
         {/* WORK EXPERIENCE SECTION BUBBLES (28-42%) - 6 bubbles */}
         <div className="absolute top-[30%] left-[3%] w-[43px] h-[47px] opacity-29 animate-float animation-delay-700" style={{borderRadius: '52% 48% 58% 42% / 55% 48% 52% 45%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="45px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="45px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -105,7 +105,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[32%] left-[9%] w-[37px] h-[39px] opacity-26 animate-float animation-delay-2300 hidden lg:block" style={{borderRadius: '48% 52% 45% 55% / 52% 55% 45% 48%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="38px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="38px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -117,7 +117,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[36%] left-[6%] w-[40px] h-[42px] opacity-28 animate-float animation-delay-1900 hidden md:block" style={{borderRadius: '64% 36% 44% 56% / 46% 54% 46% 54%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="41px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="41px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -131,7 +131,7 @@ export default function Home() {
         {/* PORTFOLIO SECTION BUBBLES (42-56%) - 6 bubbles */}
         <div className="absolute top-[44%] left-[4%] w-[44px] h-[48px] opacity-30 animate-float animation-delay-800" style={{borderRadius: '50% 50% 60% 40% / 54% 46% 54% 46%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="46px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="46px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -143,7 +143,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[46%] left-[1%] w-[38px] h-[40px] opacity-27 animate-float animation-delay-2400 hidden lg:block" style={{borderRadius: '46% 54% 47% 53% / 50% 57% 43% 50%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="39px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="39px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -155,7 +155,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[50%] left-[8%] w-[41px] h-[43px] opacity-29 animate-float animation-delay-2000 hidden md:block" style={{borderRadius: '66% 34% 46% 54% / 44% 56% 44% 56%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="42px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="42px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -169,7 +169,7 @@ export default function Home() {
         {/* SKILLS SECTION BUBBLES (56-70%) - 6 bubbles */}
         <div className="absolute top-[58%] left-[5%] w-[45px] h-[49px] opacity-30 animate-float animation-delay-900" style={{borderRadius: '48% 52% 62% 38% / 56% 44% 56% 44%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="47px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="47px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -181,7 +181,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[60%] left-[2%] w-[39px] h-[41px] opacity-28 animate-float animation-delay-2500 hidden lg:block" style={{borderRadius: '44% 56% 49% 51% / 48% 59% 41% 52%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="40px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="40px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -193,7 +193,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[64%] left-[7%] w-[42px] h-[44px] opacity-29 animate-float animation-delay-2100 hidden md:block" style={{borderRadius: '68% 32% 48% 52% / 42% 58% 42% 58%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="43px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="43px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -207,7 +207,7 @@ export default function Home() {
         {/* CONTACT SECTION BUBBLES (70-85%) - 6 bubbles */}
         <div className="absolute top-[72%] left-[4%] w-[46px] h-[50px] opacity-30 animate-float animation-delay-1000" style={{borderRadius: '46% 54% 64% 36% / 58% 42% 58% 42%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="48px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="48px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[74%] left-[1%] w-[40px] h-[42px] opacity-28 animate-float animation-delay-2600 hidden lg:block" style={{borderRadius: '42% 58% 51% 49% / 46% 61% 39% 54%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="41px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="41px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -231,7 +231,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[78%] left-[8%] w-[43px] h-[45px] opacity-29 animate-float animation-delay-2200 hidden md:block" style={{borderRadius: '70% 30% 50% 50% / 40% 60% 40% 60%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="44px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="44px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -245,7 +245,7 @@ export default function Home() {
         {/* FOOTER SECTION BUBBLES (85-100%) - 6 bubbles */}
         <div className="absolute top-[87%] left-[5%] w-[47px] h-[51px] opacity-30 animate-float animation-delay-1100" style={{borderRadius: '44% 56% 66% 34% / 60% 40% 60% 40%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="49px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="49px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -257,7 +257,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[89%] left-[2%] w-[41px] h-[43px] opacity-28 animate-float animation-delay-2700 hidden lg:block" style={{borderRadius: '40% 60% 53% 47% / 44% 63% 37% 56%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="42px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="42px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -269,7 +269,7 @@ export default function Home() {
         </div>
         <div className="absolute top-[93%] left-[7%] w-[44px] h-[46px] opacity-29 animate-float animation-delay-2300 hidden md:block" style={{borderRadius: '72% 28% 52% 48% / 38% 62% 38% 62%'}}>
           <div className="relative w-full h-full overflow-hidden border-2 border-white/20 shadow-lg shadow-primary/10 backdrop-blur-sm" style={{borderRadius: 'inherit'}}>
-            <Image src="/images/bubble1.jpg" alt="" fill className="object-cover" sizes="45px" />
+            <Image src="/images/bubble2.png" alt="" fill className="object-cover" sizes="45px" />
             <div className="absolute inset-0 bg-gradient-to-br from-white/30 via-transparent to-transparent" />
           </div>
         </div>
@@ -287,8 +287,8 @@ export default function Home() {
       <About />
       <WorkExperience />
       <Portfolio />
-      <Testimonials />
       <Skills />
+      <Testimonials />
       <Contact />
       <Footer />
     </main>
