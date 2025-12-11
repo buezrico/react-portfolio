@@ -80,7 +80,7 @@ export function About() {
             </div>
 
             {/* Description */}
-            <p className="text-light mb-8 leading-relaxed text-center">
+            <p className="text-light mb-8 leading-relaxed text-justify">
               👋 Hi, I’m a developer who enjoys building clean, engaging web
               applications and trying out new ideas. I work mainly with Next.js,
               TypeScript, and NestJS, and I like creating things that feel fast,
