@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { AnimatedSectionHeading } from "@/components/shared/AnimatedSectionHeading";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -41,7 +42,7 @@ export function Testimonials() {
 
       <div className="container-custom max-w-6xl">
         {/* Featured Testimonial */}
-        {featured && (
+        {featured && featured.image && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -57,38 +58,40 @@ export function Testimonials() {
                 {/* Top accent line */}
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
 
-                <div className="p-8 md:p-10">
-                  {/* Quote icon */}
-                  <div className="mb-6">
-                    <BsQuote className="text-5xl text-primary/20" />
-                  </div>
-
-                  {/* Rating */}
-                  <div className="mb-6">
+                <div className="grid md:grid-cols-[200px_1fr] gap-8 p-8 md:p-10">
+                  {/* Left: Avatar */}
+                  <div className="flex flex-col items-center">
+                    <div className="relative w-32 h-32 mb-4">
+                      <Image
+                        src={featured.image}
+                        alt={featured.author}
+                        fill
+                        className="object-cover rounded-full"
+                        sizes="128px"
+                      />
+                      <div className="absolute inset-0 rounded-full ring-4 ring-primary/30" />
+                    </div>
                     <StarRating rating={featured.rating} />
                   </div>
 
-                  {/* Quote text */}
-                  <blockquote className="text-xl md:text-2xl italic text-foreground leading-relaxed mb-8">
-                    "{featured.quote}"
-                  </blockquote>
-
-                  {/* Divider */}
-                  <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/40 mb-6" />
-
-                  {/* Author info */}
-                  <div className="flex items-center gap-4">
+                  {/* Right: Content */}
+                  <div>
+                    <BsQuote className="text-4xl text-primary/20 mb-4" />
+                    <blockquote className="text-xl md:text-2xl italic text-foreground leading-relaxed mb-6">
+                      "{featured.quote}"
+                    </blockquote>
+                    <div className="w-16 h-1 bg-gradient-to-r from-primary to-primary/40 mb-4" />
                     <div>
-                      <h4 className="font-bold text-lg text-foreground">
+                      <h4 className="font-bold text-lg text-foreground mb-1">
                         {featured.author}
                       </h4>
-                      <p className="text-sm text-light">
+                      <p className="text-sm text-light mb-2">
                         {featured.role} at {featured.company}
                       </p>
                       {featured.date && (
                         <Badge
                           variant="outline"
-                          className="mt-2 text-xs border-primary/30 text-primary"
+                          className="text-xs border-primary/30 text-primary"
                         >
                           {featured.date}
                         </Badge>
@@ -124,31 +127,40 @@ export function Testimonials() {
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
 
                 <div className="p-6 flex flex-col flex-1">
-                  {/* Quote icon */}
-                  <div className="mb-4">
-                    <BsQuote className="text-3xl text-primary/20" />
-                  </div>
+                  {/* Avatar at top */}
+                  {testimonial.image && (
+                    <div className="relative w-16 h-16 mx-auto mb-4">
+                      <Image
+                        src={testimonial.image}
+                        alt={testimonial.author}
+                        fill
+                        className="object-cover rounded-full"
+                        sizes="64px"
+                      />
+                      <div className="absolute inset-0 rounded-full ring-2 ring-primary/20" />
+                    </div>
+                  )}
 
                   {/* Rating */}
-                  <div className="mb-4">
+                  <div className="mb-4 flex justify-center">
                     <StarRating rating={testimonial.rating} />
                   </div>
 
                   {/* Quote text */}
-                  <blockquote className="text-light italic leading-relaxed mb-6 flex-1 line-clamp-4">
+                  <blockquote className="text-light italic leading-relaxed mb-6 flex-1 line-clamp-4 text-center">
                     "{testimonial.quote}"
                   </blockquote>
 
                   {/* Author info */}
                   <div className="mt-auto">
-                    <div className="border-t border-primary/10 pt-4">
+                    <div className="border-t border-primary/10 pt-4 text-center">
                       <h4 className="font-bold text-foreground mb-1">
                         {testimonial.author}
                       </h4>
                       <p className="text-sm text-light mb-2">
                         {testimonial.role}
                       </p>
-                      <div className="flex items-center justify-between">
+                      <div className="flex items-center justify-center gap-2 flex-wrap">
                         <Badge
                           variant="outline"
                           className="text-xs border-primary/20 bg-primary/5 text-primary"

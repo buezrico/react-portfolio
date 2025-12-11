@@ -24,21 +24,21 @@ export function Footer() {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-gray-950 via-gray-900 to-black text-white overflow-hidden mt-32 border-t border-white/10"
+      className="relative bg-gradient-to-br from-gray-100 via-gray-50 to-white text-foreground dark:from-gray-950 dark:via-gray-900 dark:to-black dark:text-white overflow-hidden mt-32 border-t border-border"
       role="contentinfo"
     >
       {/* Background decorations */}
       <div className="absolute inset-0 -z-10 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-1/4 w-64 h-64 bg-white/5 rounded-full blur-3xl" />
-        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute top-0 right-1/4 w-64 h-64 bg-primary/5 dark:bg-white/5 rounded-full blur-3xl" />
+        <div className="absolute bottom-0 left-1/3 w-80 h-80 bg-primary/5 dark:bg-white/5 rounded-full blur-3xl" />
       </div>
 
       {/* Subtle grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.02] pointer-events-none"
         style={{
           backgroundImage:
-            "linear-gradient(white 1px, transparent 1px), linear-gradient(90deg, white 1px, transparent 1px)",
+            "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
           backgroundSize: "50px 50px",
         }}
       />
@@ -55,13 +55,13 @@ export function Footer() {
           <motion.a
             href="#"
             onClick={(e) => scrollToSection(e, "#")}
-            className="inline-block text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-white via-white/95 to-white/90 bg-clip-text text-transparent hover:from-white hover:via-white hover:to-white transition-all duration-300"
+            className="inline-block text-3xl md:text-4xl font-bold mb-2 bg-gradient-to-r from-foreground via-foreground/95 to-foreground/90 dark:from-white dark:via-white/95 dark:to-white/90 bg-clip-text text-transparent hover:from-foreground hover:via-foreground hover:to-foreground dark:hover:from-white dark:hover:via-white dark:hover:to-white transition-all duration-300"
             whileHover={{ scale: 1.05 }}
             transition={{ duration: 0.3 }}
           >
             Buez Rico
           </motion.a>
-          <p className="text-sm md:text-base text-white/60">
+          <p className="text-sm md:text-base text-muted-foreground">
             {professionalTagline}
           </p>
         </motion.div>
@@ -77,12 +77,12 @@ export function Footer() {
           {/* About Me Column */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-              <div className="h-0.5 w-8 bg-gradient-to-r from-white/50 to-transparent"></div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-white/80">
+              <div className="h-0.5 w-8 bg-gradient-to-r from-foreground/40 dark:from-white/50 to-transparent"></div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground/80 dark:text-white/80">
                 About Me
               </h3>
             </div>
-            <p className="text-sm text-white/60 leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               Passionate full-stack developer specializing in Next.js,
               TypeScript, and modern web technologies. I create fast, engaging,
               and user-friendly applications that solve real-world problems.
@@ -92,8 +92,8 @@ export function Footer() {
           {/* Quick Links Column */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-              <div className="h-0.5 w-8 bg-gradient-to-r from-white/50 to-transparent"></div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-white/80">
+              <div className="h-0.5 w-8 bg-gradient-to-r from-foreground/40 dark:from-white/50 to-transparent"></div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground/80 dark:text-white/80">
                 Quick Links
               </h3>
             </div>
@@ -110,12 +110,12 @@ export function Footer() {
                     <motion.a
                       href={link.href}
                       onClick={(e) => scrollToSection(e, link.href)}
-                      className="relative inline-block text-sm text-white/70 hover:text-white transition-colors duration-300 group"
+                      className="relative inline-block text-sm text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-300 group"
                       whileHover={{ x: 3 }}
                       transition={{ duration: 0.2 }}
                     >
                       {link.label}
-                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-white group-hover:w-full transition-all duration-300" />
+                      <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-foreground dark:bg-white group-hover:w-full transition-all duration-300" />
                     </motion.a>
                   </motion.li>
                 ))}
@@ -126,35 +126,35 @@ export function Footer() {
           {/* Connect Column */}
           <div className="text-center md:text-left">
             <div className="flex items-center justify-center md:justify-start gap-2 mb-3">
-              <div className="h-0.5 w-8 bg-gradient-to-r from-white/50 to-transparent"></div>
-              <h3 className="text-xs font-bold uppercase tracking-wider text-white/80">
+              <div className="h-0.5 w-8 bg-gradient-to-r from-foreground/40 dark:from-white/50 to-transparent"></div>
+              <h3 className="text-xs font-bold uppercase tracking-wider text-foreground/80 dark:text-white/80">
                 Connect
               </h3>
             </div>
             <div className="space-y-2.5">
               <div className="flex items-center justify-center md:justify-start gap-2">
-                <MdEmail className="text-white/60 text-base flex-shrink-0" />
+                <MdEmail className="text-muted-foreground text-base flex-shrink-0" />
                 <a
                   href={`mailto:${contactInfo.email}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-300 hover:underline"
+                  className="text-sm text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-300 hover:underline"
                 >
                   {contactInfo.email}
                 </a>
               </div>
 
               <div className="flex items-center justify-center md:justify-start gap-2">
-                <MdPhone className="text-white/60 text-base flex-shrink-0" />
+                <MdPhone className="text-muted-foreground text-base flex-shrink-0" />
                 <a
                   href={`tel:${contactInfo.phone}`}
-                  className="text-sm text-white/70 hover:text-white transition-colors duration-300 hover:underline"
+                  className="text-sm text-muted-foreground hover:text-foreground dark:hover:text-white transition-colors duration-300 hover:underline"
                 >
                   {contactInfo.phone}
                 </a>
               </div>
 
               <div className="flex items-center justify-center md:justify-start gap-2">
-                <MdLocationOn className="text-white/60 text-base flex-shrink-0" />
-                <span className="text-sm text-white/70">
+                <MdLocationOn className="text-muted-foreground text-base flex-shrink-0" />
+                <span className="text-sm text-muted-foreground">
                   {contactInfo.location}
                 </span>
               </div>
@@ -183,7 +183,7 @@ export function Footer() {
                   target={social.url.startsWith("mailto:") ? undefined : "_blank"}
                   rel={social.url.startsWith("mailto:") ? undefined : "noreferrer"}
                   aria-label={social.ariaLabel}
-                  className={`relative group p-3 rounded-xl bg-gradient-to-br ${social.gradient} backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-gray-950`}
+                  className={`relative group p-3 rounded-xl bg-gradient-to-br ${social.gradient} backdrop-blur-sm border border-white/20 shadow-lg hover:shadow-2xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background`}
                   whileHover={{ scale: 1.1, rotate: 5 }}
                   whileTap={{ scale: 0.95 }}
                   transition={{ type: "spring", stiffness: 300 }}
@@ -202,7 +202,7 @@ export function Footer() {
         </motion.div>
 
         {/* Divider */}
-        <div className="mb-6 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent" />
+        <div className="mb-6 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
 
         {/* Legal Section */}
         <motion.div
@@ -212,17 +212,17 @@ export function Footer() {
           viewport={{ once: true, margin: "-100px" }}
           transition={{ duration: 0.6, delay: 0.6 }}
         >
-          <p className="text-sm text-white/60">
+          <p className="text-sm text-muted-foreground">
             &copy; {currentYear} Buez Rico. All rights reserved.
           </p>
-          <p className="text-xs text-white/40">
+          <p className="text-xs text-muted-foreground/70">
             Crafted with passion &bull; Built with Next.js & TypeScript
           </p>
         </motion.div>
       </div>
 
       {/* Bottom subtle glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
     </footer>
   );
 }
