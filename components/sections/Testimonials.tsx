@@ -51,7 +51,7 @@ export function Testimonials() {
 
   // Carousel state management
   const carouselRef = useRef<HTMLDivElement>(null);
-  const [currentPage, setCurrentPage] = useState(0);
+  const [currentCardIndex, setCurrentCardIndex] = useState(0);
   const [canScrollPrev, setCanScrollPrev] = useState(false);
   const [canScrollNext, setCanScrollNext] = useState(true);
   const [cardsPerView, setCardsPerView] = useState(3);
@@ -77,29 +77,37 @@ export function Testimonials() {
     setCanScrollPrev(scrollLeft > 10);
     setCanScrollNext(scrollLeft < scrollWidth - clientWidth - 10);
 
-    // Calculate current page
-    const cardWidth = clientWidth / cardsPerView;
-    const page = Math.round(scrollLeft / (cardWidth * cardsPerView));
-    setCurrentPage(page);
-  }, [cardsPerView]);
+    // Calculate current card index based on scroll position
+    const cardWidth = scrollWidth / allTestimonials.length;
+    const index = Math.round(scrollLeft / cardWidth);
+    setCurrentCardIndex(index);
+  }, [allTestimonials.length]);
 
-  // Scroll to specific page
-  const scrollToPage = useCallback((page: number) => {
+  // Scroll to specific card
+  const scrollToCard = useCallback((cardIndex: number) => {
     if (!carouselRef.current) return;
 
-    const cardWidth = carouselRef.current.clientWidth / cardsPerView;
-    const scrollPosition = page * cardWidth * cardsPerView;
+    const container = carouselRef.current;
+    const cardWidth = container.scrollWidth / allTestimonials.length;
+    const scrollPosition = cardIndex * cardWidth;
 
-    carouselRef.current.scrollTo({
+    container.scrollTo({
       left: scrollPosition,
       behavior: 'smooth'
     });
-  }, [cardsPerView]);
 
-  const scrollPrev = () => scrollToPage(Math.max(0, currentPage - 1));
+    setCurrentCardIndex(cardIndex);
+  }, [allTestimonials.length]);
+
+  const scrollPrev = () => {
+    const newIndex = Math.max(0, currentCardIndex - 1);
+    scrollToCard(newIndex);
+  };
+
   const scrollNext = () => {
-    const maxPage = Math.ceil(allTestimonials.length / cardsPerView) - 1;
-    scrollToPage(Math.min(maxPage, currentPage + 1));
+    const maxIndex = allTestimonials.length - 1;
+    const newIndex = Math.min(maxIndex, currentCardIndex + 1);
+    scrollToCard(newIndex);
   };
 
   // Keyboard navigation
@@ -111,7 +119,7 @@ export function Testimonials() {
 
     window.addEventListener('keydown', handleKeyDown);
     return () => window.removeEventListener('keydown', handleKeyDown);
-  }, [currentPage, canScrollPrev, canScrollNext]);
+  }, [currentCardIndex, canScrollPrev, canScrollNext]);
 
   return (
     <section
@@ -136,29 +144,47 @@ export function Testimonials() {
       />
 
       <div className="container-custom max-w-6xl">
-        {/* Premium Carousel */}
-        <div className="relative group/carousel">
-          {/* Previous Button */}
+        {/* Navigation Buttons - Top Right */}
+        <div className="flex justify-end gap-3 mb-8">
           <motion.button
             onClick={scrollPrev}
             disabled={!canScrollPrev}
-            aria-label="Previous testimonials"
-            className="absolute left-0 top-1/2 -translate-y-1/2 z-10
-                       w-12 h-12 rounded-full
+            aria-label="Previous testimonial"
+            className="w-12 h-12 rounded-full
                        bg-card/80 backdrop-blur-xl
                        border border-primary/20
                        flex items-center justify-center
                        disabled:opacity-40 disabled:cursor-not-allowed
-                       opacity-0 md:group-hover/carousel:opacity-100
-                       transition-opacity duration-300
-                       shadow-lg hover:shadow-xl hover:shadow-primary/20"
-            whileHover={{ scale: 1.1, x: -4 }}
+                       shadow-lg hover:shadow-xl hover:shadow-primary/20
+                       transition-all duration-300"
+            whileHover={{ scale: 1.1, x: -2 }}
             whileTap={{ scale: 0.95 }}
             transition={{ type: "spring", stiffness: 300, damping: 20 }}
           >
             <ChevronLeft className="w-6 h-6 text-primary" />
           </motion.button>
 
+          <motion.button
+            onClick={scrollNext}
+            disabled={!canScrollNext}
+            aria-label="Next testimonial"
+            className="w-12 h-12 rounded-full
+                       bg-card/80 backdrop-blur-xl
+                       border border-primary/20
+                       flex items-center justify-center
+                       disabled:opacity-40 disabled:cursor-not-allowed
+                       shadow-lg hover:shadow-xl hover:shadow-primary/20
+                       transition-all duration-300"
+            whileHover={{ scale: 1.1, x: 2 }}
+            whileTap={{ scale: 0.95 }}
+            transition={{ type: "spring", stiffness: 300, damping: 20 }}
+          >
+            <ChevronRight className="w-6 h-6 text-primary" />
+          </motion.button>
+        </div>
+
+        {/* Carousel Container */}
+        <div className="relative">
           {/* Carousel Scroll Container */}
           <div
             ref={carouselRef}
@@ -184,7 +210,7 @@ export function Testimonials() {
                 }}
                 whileHover={{ y: -10, scale: 1.02, rotateZ: 0.5 }}
                 className="snap-start flex-shrink-0
-                           w-full md:w-[calc(60%-1rem)] lg:w-[calc(38%-1rem)]"
+                           w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)]"
               >
                 <Card className="relative overflow-hidden border-primary/20
                                bg-gradient-to-br from-card via-card to-card/95
@@ -256,37 +282,14 @@ export function Testimonials() {
             ))}
           </div>
 
-          {/* Next Button */}
-          <motion.button
-            onClick={scrollNext}
-            disabled={!canScrollNext}
-            aria-label="Next testimonials"
-            className="absolute right-0 top-1/2 -translate-y-1/2 z-10
-                       w-12 h-12 rounded-full
-                       bg-card/80 backdrop-blur-xl
-                       border border-primary/20
-                       flex items-center justify-center
-                       disabled:opacity-40 disabled:cursor-not-allowed
-                       opacity-0 md:group-hover/carousel:opacity-100
-                       transition-opacity duration-300
-                       shadow-lg hover:shadow-xl hover:shadow-primary/20"
-            whileHover={{ scale: 1.1, x: 4 }}
-            whileTap={{ scale: 0.95 }}
-            transition={{ type: "spring", stiffness: 300, damping: 20 }}
-          >
-            <ChevronRight className="w-6 h-6 text-primary" />
-          </motion.button>
-
           {/* Dot Indicators */}
           <div className="flex justify-center gap-2 mt-8" role="tablist" aria-label="Carousel pages">
-            {Array.from({
-              length: Math.ceil(allTestimonials.length / cardsPerView)
-            }).map((_, index) => (
+            {allTestimonials.map((_, index) => (
               <motion.button
                 key={index}
-                onClick={() => scrollToPage(index)}
-                aria-label={`Go to page ${index + 1}`}
-                aria-current={currentPage === index ? "true" : "false"}
+                onClick={() => scrollToCard(index)}
+                aria-label={`Go to testimonial ${index + 1}`}
+                aria-current={currentCardIndex === index ? "true" : "false"}
                 className="relative"
                 whileHover={{ scale: 1.2 }}
                 whileTap={{ scale: 0.9 }}
@@ -294,9 +297,9 @@ export function Testimonials() {
                 <motion.div
                   className="rounded-full transition-colors"
                   animate={{
-                    width: currentPage === index ? 32 : 8,
+                    width: currentCardIndex === index ? 32 : 8,
                     height: 8,
-                    backgroundColor: currentPage === index
+                    backgroundColor: currentCardIndex === index
                       ? 'hsl(var(--primary))'
                       : 'hsl(var(--primary) / 0.3)'
                   }}
@@ -313,9 +316,7 @@ export function Testimonials() {
             aria-atomic="true"
             className="sr-only"
           >
-            Showing testimonials {currentPage * cardsPerView + 1} to{" "}
-            {Math.min((currentPage + 1) * cardsPerView, allTestimonials.length)} of{" "}
-            {allTestimonials.length}
+            Showing testimonial {currentCardIndex + 1} of {allTestimonials.length}
           </div>
         </div>
       </div>
