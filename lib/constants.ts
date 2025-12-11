@@ -239,7 +239,7 @@ export const footerNavLinks: FooterLink[] = [
 // Contact Info
 export const contactInfo = {
   email: "chibueze@buezrico.com",
-  phone: "+239-810-916-9579",
+  phone: "+2348109169579",
   location: "Lagos, Nigeria",
 };
 
