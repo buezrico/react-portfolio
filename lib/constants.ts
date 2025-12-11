@@ -10,6 +10,7 @@ import synproxi from "@/public/images/portfolio/synproxi.png";
 import nkechi from "@/public/images/portfolio/nkechi.png";
 import medhub from "@/public/images/portfolio/medhub.png";
 import meImage from "@/public/images/me.png";
+import meStudioImage from "@/public/images/me_studio.jpg";
 import { BsLinkedin, BsGithub, BsWhatsapp, BsTwitterX } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
@@ -266,7 +267,7 @@ export const testimonials: Testimonial[] = [
     author: "Michael Chen",
     role: "CTO",
     company: "DataFlow Systems",
-    image: meImage,
+    image: meStudioImage,
     rating: 5,
     date: "Nov 2024"
   },
@@ -286,7 +287,7 @@ export const testimonials: Testimonial[] = [
     author: "Emily Rodriguez",
     role: "Engineering Lead",
     company: "CloudNine Solutions",
-    image: meImage,
+    image: meStudioImage,
     rating: 5,
     date: "Sep 2024"
   },
@@ -306,7 +307,7 @@ export const testimonials: Testimonial[] = [
     author: "Lisa Thompson",
     role: "Project Director",
     company: "Digital Dynamics",
-    image: meImage,
+    image: meStudioImage,
     rating: 5,
     date: "Jul 2024"
   }

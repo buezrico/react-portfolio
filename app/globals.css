@@ -344,4 +344,37 @@
   .animate-shadow-swing {
     animation: shadow-swing 5s ease-in-out infinite;
   }
+
+  /* Testimonial Premium Animations */
+  @property --gradient-angle {
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+  }
+
+  @keyframes rotate-gradient {
+    from {
+      --gradient-angle: 0deg;
+    }
+    to {
+      --gradient-angle: 360deg;
+    }
+  }
+
+  @keyframes shimmer {
+    0% {
+      background-position: -200% 0;
+    }
+    100% {
+      background-position: 200% 0;
+    }
+  }
+
+  .animate-rotate-border {
+    animation: rotate-gradient 3s linear infinite;
+  }
+
+  .animate-shimmer {
+    animation: shimmer 2s linear infinite;
+  }
 }
