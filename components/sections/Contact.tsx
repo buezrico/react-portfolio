@@ -172,21 +172,21 @@ export function Contact() {
                     <div className={`absolute top-0 left-0 right-0 h-[2px]
                       bg-gradient-to-r ${option.gradient} opacity-60`} />
 
-                    <div className="relative p-8 z-10">
+                    <div className="relative p-6 z-10">
                       {/* Icon Badge - enhanced */}
-                      <div className={`inline-flex p-5 rounded-2xl
+                      <div className={`inline-flex p-4 rounded-2xl
                         bg-gradient-to-br ${option.gradient}
-                        shadow-lg shadow-primary/30 mb-6
+                        shadow-lg shadow-primary/30 mb-4
                         group-hover:scale-110 group-hover:rotate-3
                         transition-all duration-300`}>
-                        <Icon className="text-white text-2xl" />
+                        <Icon className="text-white text-xl" />
                       </div>
 
                       {/* Content */}
-                      <h4 className="font-semibold text-xl mb-3 text-foreground tracking-tight">
+                      <h4 className="font-semibold text-xl mb-2 text-foreground tracking-tight">
                         {option.title}
                       </h4>
-                      <p className="text-base text-light mb-6 font-normal">
+                      <p className="text-base text-light mb-4 font-normal">
                         {option.value}
                       </p>
 
