@@ -24,7 +24,7 @@ export function Footer() {
 
   return (
     <footer
-      className="relative bg-gradient-to-br from-gray-100 via-gray-50 to-white text-foreground dark:from-gray-950 dark:via-gray-900 dark:to-black dark:text-white overflow-hidden mt-24 border-t border-border"
+      className="relative bg-transparent text-foreground dark:text-white overflow-hidden mt-24"
       role="contentinfo"
     >
       {/* Background decorations */}
@@ -35,7 +35,7 @@ export function Footer() {
 
       {/* Subtle grid pattern overlay */}
       <div
-        className="absolute inset-0 opacity-[0.02] dark:opacity-[0.02] pointer-events-none"
+        className="absolute inset-0 opacity-[0.015] dark:opacity-[0.015] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(currentColor 1px, transparent 1px), linear-gradient(90deg, currentColor 1px, transparent 1px)",
@@ -209,9 +209,6 @@ export function Footer() {
           </p>
         </motion.div>
       </div>
-
-      {/* Bottom subtle glow */}
-      <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border/50 to-transparent" />
     </footer>
   );
 }
