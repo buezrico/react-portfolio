@@ -94,7 +94,7 @@ export function Contact() {
       <div className="container-custom max-w-7xl">
         <div className="grid lg:grid-cols-[42%_1fr] md:grid-cols-1 gap-16 lg:gap-20 items-start">
           {/* Contact Options */}
-          <div className="space-y-8 lg:sticky lg:top-24 lg:self-start">
+          <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
             {/* Intro Text */}
             <motion.div
               whileHover={{
@@ -138,22 +138,23 @@ export function Contact() {
               </Card>
             </motion.div>
 
-            {/* Contact Cards */}
+            {/* Contact Cards - Side by Side */}
+            <div className="flex flex-col md:flex-row gap-4">
             {contactOptions.map((option, index) => {
               const Icon = option.icon;
               return (
                 <motion.div
                   key={option.title}
                   whileHover={{
-                    y: -12,
-                    scale: 1.02,
+                    y: -6,
+                    scale: 1.01,
                     transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] }
                   }}
                 >
                   <Card className="relative overflow-hidden
                     bg-card dark:bg-card/95
                     border border-primary/10
-                    rounded-2xl
+                    rounded-xl
                     shadow-[0_8px_30px_rgb(0,0,0,0.08)]
                     dark:shadow-[0_8px_30px_rgb(0,0,0,0.3)]
                     hover:shadow-[0_20px_50px_rgb(0,0,0,0.12),0_0_0_1px_rgb(249,170,35,0.15)]
@@ -163,7 +164,7 @@ export function Contact() {
                     group">
 
                     {/* Gradient border effect */}
-                    <div className="absolute inset-0 rounded-2xl
+                    <div className="absolute inset-0 rounded-xl
                       bg-gradient-to-br from-primary/5 via-transparent to-primary/5
                       opacity-0 group-hover:opacity-100
                       transition-opacity duration-500 pointer-events-none" />
@@ -172,36 +173,33 @@ export function Contact() {
                     <div className={`absolute top-0 left-0 right-0 h-[2px]
                       bg-gradient-to-r ${option.gradient} opacity-60`} />
 
-                    <div className="relative p-6 z-10">
-                      {/* Icon Badge - enhanced */}
-                      <div className={`inline-flex p-4 rounded-2xl
+                    <div className="relative p-4 z-10">
+                      {/* Tiny icon badge */}
+                      <div className={`inline-flex p-2.5 rounded-xl
                         bg-gradient-to-br ${option.gradient}
-                        shadow-lg shadow-primary/30 mb-4
-                        group-hover:scale-110 group-hover:rotate-3
-                        transition-all duration-300`}>
-                        <Icon className="text-white text-xl" />
+                        shadow-md shadow-primary/20 mb-2
+                        group-hover:scale-105 transition-all duration-300`}>
+                        <Icon className="text-white text-base" />
                       </div>
 
-                      {/* Content */}
-                      <h4 className="font-semibold text-xl mb-2 text-foreground tracking-tight">
+                      {/* Compact content */}
+                      <h4 className="font-semibold text-sm mb-1 text-foreground tracking-tight">
                         {option.title}
                       </h4>
-                      <p className="text-base text-light mb-4 font-normal">
+                      <p className="text-xs text-light mb-3 font-normal truncate">
                         {option.value}
                       </p>
 
-                      <Button
-                        asChild
-                        variant="outline"
-                        className="w-full border-primary/20 hover:bg-primary hover:text-primary-foreground
-                          hover:border-primary transition-all duration-300 group/btn"
+                      {/* Small link instead of button */}
+                      <a
+                        href={option.link}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 font-medium transition-colors"
                       >
-                        <a href={option.link} target="_blank" rel="noreferrer"
-                          className="flex items-center justify-center gap-2">
-                          <span>Send a Message</span>
-                          <BsArrowRight className="group-hover/btn:translate-x-1 transition-transform duration-300" />
-                        </a>
-                      </Button>
+                        <span>Contact</span>
+                        <BsArrowRight className="text-xs" />
+                      </a>
                     </div>
 
                     {/* Bottom shine effect */}
@@ -212,6 +210,7 @@ export function Contact() {
                 </motion.div>
               );
             })}
+            </div>
           </div>
 
           {/* Contact Form */}
