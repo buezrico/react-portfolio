@@ -145,6 +145,7 @@ export function Contact() {
               return (
                 <motion.div
                   key={option.title}
+                  className="flex-1"
                   whileHover={{
                     y: -6,
                     scale: 1.01,
