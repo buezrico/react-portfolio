@@ -7,10 +7,13 @@ import { Testimonials } from "@/components/sections/Testimonials";
 import { Skills } from "@/components/sections/Skills";
 import { Contact } from "@/components/sections/Contact";
 import { Footer } from "@/components/sections/Footer";
+import { SkipLink } from "@/components/shared/SkipLink";
 
 export default function Home() {
   return (
-    <main className="relative min-h-screen">
+    <>
+      <SkipLink />
+      <main id="main-content" className="relative min-h-screen">
       {/* Page content */}
       <Header />
       <FloatingNav />
@@ -21,6 +24,7 @@ export default function Home() {
       {/* <Testimonials /> */}
       <Contact />
       <Footer />
-    </main>
+      </main>
+    </>
   );
 }

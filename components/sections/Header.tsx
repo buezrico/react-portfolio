@@ -22,22 +22,26 @@ export function Header() {
           href="http://github.com/buezrico"
           target="_blank"
           rel="noreferrer"
+          aria-label="Visit GitHub profile"
           className="p-3 bg-primary/20 border border-primary/30 rounded-full hover:bg-primary hover:border-primary hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-110 group"
         >
           <BsGithub
             size={20}
             className="text-primary group-hover:text-primary-foreground transition-colors"
+            aria-hidden="true"
           />
         </a>
         <a
           href="https://www.linkedin.com/in/chibueze-okoronkwo/"
           target="_blank"
           rel="noreferrer"
+          aria-label="Visit LinkedIn profile"
           className="p-3 bg-primary/20 border border-primary/30 rounded-full hover:bg-primary hover:border-primary hover:shadow-lg hover:shadow-primary/40 transition-all duration-300 hover:scale-110 group"
         >
           <BsLinkedin
             size={20}
             className="text-primary group-hover:text-primary-foreground transition-colors"
+            aria-hidden="true"
           />
         </a>
       </div>

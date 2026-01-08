@@ -31,7 +31,11 @@ export function FloatingNav() {
   };
 
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 flex gap-3 bg-card/70 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 shadow-lg">
+    <nav
+      role="navigation"
+      aria-label="Main navigation"
+      className="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 flex gap-3 bg-card/70 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 shadow-lg"
+    >
       {navItems.map((item, index) => {
         const Icon = item.icon;
         const isActive = activeSection === item.id;

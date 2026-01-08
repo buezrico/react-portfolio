@@ -196,10 +196,11 @@ export function Contact() {
                         href={option.link}
                         target="_blank"
                         rel="noreferrer"
+                        aria-label={`Contact via ${option.title}`}
                         className="inline-flex items-center gap-1 text-xs text-primary hover:text-primary/80 font-medium transition-colors"
                       >
                         <span>Contact</span>
-                        <BsArrowRight className="text-xs" />
+                        <BsArrowRight className="text-xs" aria-hidden="true" />
                       </a>
                     </div>
 
@@ -269,14 +270,17 @@ export function Contact() {
                       name="name"
                       placeholder="John Doe"
                       required
+                      aria-required="true"
+                      aria-invalid={!!state.errors?.name}
+                      aria-describedby={state.errors?.name ? "name-error" : undefined}
                       className="bg-background/50 border-primary/15
                         focus:border-primary/50 focus:ring-4 focus:ring-primary/10
                         hover:border-primary/30
                         transition-all duration-200 h-12 rounded-xl"
                     />
                     {state.errors?.name && (
-                      <p className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
-                        <span>⚠</span> {state.errors.name[0]}
+                      <p id="name-error" role="alert" className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
+                        <span aria-hidden="true">⚠</span> {state.errors.name[0]}
                       </p>
                     )}
                   </div>
@@ -291,14 +295,17 @@ export function Contact() {
                       name="email"
                       placeholder="john@example.com"
                       required
+                      aria-required="true"
+                      aria-invalid={!!state.errors?.email}
+                      aria-describedby={state.errors?.email ? "email-error" : undefined}
                       className="bg-background/50 border-primary/15
                         focus:border-primary/50 focus:ring-4 focus:ring-primary/10
                         hover:border-primary/30
                         transition-all duration-200 h-12 rounded-xl"
                     />
                     {state.errors?.email && (
-                      <p className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
-                        <span>⚠</span> {state.errors.email[0]}
+                      <p id="email-error" role="alert" className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
+                        <span aria-hidden="true">⚠</span> {state.errors.email[0]}
                       </p>
                     )}
                   </div>
@@ -313,14 +320,17 @@ export function Contact() {
                       rows={6}
                       placeholder="Tell me about your project or idea..."
                       required
+                      aria-required="true"
+                      aria-invalid={!!state.errors?.message}
+                      aria-describedby={state.errors?.message ? "message-error" : undefined}
                       className="bg-background/50 border-primary/15
                         focus:border-primary/50 focus:ring-4 focus:ring-primary/10
                         hover:border-primary/30
                         resize-none transition-all duration-200 rounded-xl"
                     />
                     {state.errors?.message && (
-                      <p className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
-                        <span>⚠</span> {state.errors.message[0]}
+                      <p id="message-error" role="alert" className="text-red-500 text-xs mt-1.5 flex items-center gap-1">
+                        <span aria-hidden="true">⚠</span> {state.errors.message[0]}
                       </p>
                     )}
                   </div>
