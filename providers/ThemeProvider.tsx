@@ -17,10 +17,7 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
   // Get the resolved theme (actual light or dark, not system)
   const getResolvedTheme = (themeValue: Theme): ResolvedTheme => {
     if (themeValue === 'system') {
-      if (typeof window !== 'undefined') {
-        return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light'
-      }
-      return 'dark' // Fallback for SSR
+      return 'dark' // Default to dark regardless of system preference
     }
     return themeValue
   }
@@ -56,24 +53,6 @@ export function ThemeProvider({ children }: ThemeProviderProps) {
     localStorage.setItem(STORAGE_KEY, theme)
   }, [theme, mounted])
 
-  // Listen for system preference changes
-  useEffect(() => {
-    if (theme !== 'system') return
-
-    const mediaQuery = window.matchMedia('(prefers-color-scheme: dark)')
-
-    const handleChange = () => {
-      const resolved = getResolvedTheme('system')
-      setResolvedTheme(resolved)
-
-      const root = document.documentElement
-      root.classList.remove('light', 'dark')
-      root.classList.add(resolved)
-    }
-
-    mediaQuery.addEventListener('change', handleChange)
-    return () => mediaQuery.removeEventListener('change', handleChange)
-  }, [theme])
 
   const setTheme = (newTheme: Theme) => {
     setThemeState(newTheme)

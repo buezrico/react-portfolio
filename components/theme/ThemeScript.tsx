@@ -9,7 +9,7 @@ export function ThemeScript() {
             return theme;
           }
           if (theme === 'system') {
-            return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+            return 'dark';
           }
           if (!theme) {
             return 'dark';
