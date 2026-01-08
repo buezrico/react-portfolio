@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ThemeScript } from "@/components/theme/ThemeScript";
+import { RegisterCSSProperties } from "@/components/shared/RegisterCSSProperties";
 
 export const metadata: Metadata = {
   metadataBase: new URL(
@@ -73,8 +74,34 @@ export default function RootLayout({
     <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <head>
         <ThemeScript />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Person",
+              name: "Chibueze Okoronkwo",
+              alternateName: "Buez Rico",
+              jobTitle: "Software Engineer",
+              url: "https://buezrico.com",
+              sameAs: [
+                "https://github.com/buezrico",
+                "https://linkedin.com/in/chibueze-okoronkwo",
+                "https://twitter.com/buezrico",
+              ],
+              knowsAbout: [
+                "React",
+                "Next.js",
+                "TypeScript",
+                "Node.js",
+                "Web Development",
+              ],
+            }),
+          }}
+        />
       </head>
       <body className="antialiased">
+        <RegisterCSSProperties />
         <ThemeProvider>
           {/* Global Animated Background - covers entire page */}
           <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">

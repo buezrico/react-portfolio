@@ -346,11 +346,7 @@
   }
 
   /* Testimonial Premium Animations */
-  @property --gradient-angle {
-    syntax: "<angle>";
-    initial-value: 0deg;
-    inherits: false;
-  }
+  /* Note: --gradient-angle is registered via CSS.registerProperty in RegisterCSSProperties.tsx */
 
   @keyframes rotate-gradient {
     from {

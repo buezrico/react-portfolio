@@ -83,7 +83,7 @@ export interface Testimonial {
   author: string;
   role: string;
   company: string;
-  image?: StaticImageData;
+  image?: string;
   rating: number; // 1-5 stars
   featured?: boolean;
   date?: string;
