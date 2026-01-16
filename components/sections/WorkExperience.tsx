@@ -39,7 +39,7 @@ export function WorkExperience() {
                 <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-primary/80 to-primary/60" />
 
                 {/* Content section with enhanced spacing */}
-                <div className="relative p-8">
+                <div className="relative p-4 sm:p-8">
                   {/* Icon badge */}
                   <div className="absolute -top-4 -right-4 w-20 h-20 bg-gradient-to-br from-primary to-primary/80 rounded-full flex items-center justify-center shadow-lg shadow-primary/30 group-hover:scale-110 transition-transform duration-300">
                     <BsBriefcase className="text-primary-foreground text-2xl" />

@@ -9,6 +9,7 @@ import insightproxim from "@/public/images/portfolio/insightproxim.png";
 import synproxi from "@/public/images/portfolio/synproxi.png";
 import nkechi from "@/public/images/portfolio/nkechi.png";
 import medhub from "@/public/images/portfolio/medhub.png";
+import optimalgems from "@/public/images/portfolio/optimalgems.png";
 import { BsLinkedin, BsGithub, BsWhatsapp, BsTwitterX } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 
@@ -21,7 +22,7 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://medhub.com/",
     description:
       "MedHub is an integrated online platform for leading diagnostic centers in Nigeria who offer comprehensive medical test services with advanced technology. ",
-    technologies: ["Next.js, Typescript, Tailwindcss, Shadcn, Zustand, Prisma"],
+    technologies: ["Next.js", "TypeScript", "Tailwindcss", "Shadcn", "Zustand", "Prisma"],
   },
   {
     id: 2,
@@ -30,7 +31,16 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://assetplusng.com",
     description:
       "Nigeria's leading Real Estate Financing company providing finance for dream houses and landed properties in Nigeria and in diaspora.",
-    technologies: ["Next.js, Typescript, Tailwindcss, Shadcn, Zustand, Prisma"],
+    technologies: ["Next.js", "TypeScript", "Tailwindcss", "Shadcn", "Zustand", "Prisma"],
+  },
+  {
+    id: 11,
+    image: optimalgems,
+    title: "OPTIMAL GEMS",
+    demo: "https://optimal-gems.vercel.app/",
+    description:
+      "Optimal Gems Resources Limited specializes in piling works, civil engineering, and building construction with over 15 years of proven expertise across Nigeria. RC 989770 - ISO 9001 Certified.",
+    technologies: ["Next.js", "TypeScript", "Tailwindcss", "Shadcn"],
   },
   {
     id: 4,
@@ -66,7 +76,7 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://valucares.vercel.app//",
     description:
       "Valucares is an online, real-time healthcare provider. Customers can book appointments for health checks seamlessly.",
-    technologies: ["Next.js, Typescript, Sass"],
+    technologies: ["Next.js", "TypeScript", "Sass"],
   },
   {
     id: 7,
@@ -75,7 +85,7 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://tourafrica.vercel.app",
     description:
       "TourAfrica is a comprehensive travel platform that offers curated African travel experiences. Explore and book unique tours, accommodations, and activities with ease.",
-    technologies: ["Next.js. Typescript, Sass"],
+    technologies: ["Next.js", "TypeScript", "Sass"],
   },
   {
     id: 8,
@@ -84,7 +94,7 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://insightproxim.vercel.app",
     description:
       "InsightProxim Consulting provides expert guidance and solutions in business strategy and management. Tailored consulting services to help organizations achieve their goals.",
-    technologies: ["Next.js, Typescript, Sass"],
+    technologies: ["Next.js", "TypeScript", "Sass"],
   },
   {
     id: 9,
@@ -93,7 +103,7 @@ export const portfolioProjects: PortfolioProject[] = [
     demo: "https://synproxi.vercel.app/",
     description:
       "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
-    technologies: ["Next.js, Typescript, Tailwindcss"],
+    technologies: ["Next.js", "TypeScript", "Tailwindcss"],
   },
   {
     id: 10,

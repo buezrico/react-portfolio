@@ -34,7 +34,7 @@ export function About() {
   return (
     <section id="about">
       <div className="container-custom">
-        <div className="flex flex-col md:flex-row justify-between items-center gap-12">
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 sm:gap-12">
           {/* Image - Clean Modern Tilted Design */}
           <div className="w-full md:w-[32%] flex-shrink-0">
             {/* Titles */}

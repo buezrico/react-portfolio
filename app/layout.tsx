@@ -7,7 +7,7 @@ import { RegisterCSSProperties } from "@/components/shared/RegisterCSSProperties
 
 export const metadata: Metadata = {
   metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://buezrico.vercel.app"
+    process.env.NEXT_PUBLIC_SITE_URL || "https://buezrico.vercel.app",
   ),
   title: "Chibueze Rico | Software Engineer Portfolio",
   description:
@@ -104,7 +104,7 @@ export default function RootLayout({
         <RegisterCSSProperties />
         <ThemeProvider>
           {/* Global Animated Background - covers entire page */}
-          <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+          <div className="fixed inset-0 -z-50  pointer-events-none">
             <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob dark:mix-blend-normal" />
             <div className="absolute top-0 -right-4 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 dark:mix-blend-normal" />
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary/25 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 dark:mix-blend-normal" />

@@ -92,7 +92,7 @@ export function Contact() {
       <AnimatedSectionHeading subtitle="Let's Connect" title="Get In Touch" />
 
       <div className="container-custom max-w-7xl">
-        <div className="grid lg:grid-cols-[42%_1fr] md:grid-cols-1 gap-16 lg:gap-20 items-start">
+        <div className="grid lg:grid-cols-[42%_1fr] md:grid-cols-1 gap-8 sm:gap-16 lg:gap-20 items-start">
           {/* Contact Options */}
           <div className="flex flex-col gap-6 lg:sticky lg:top-24 lg:self-start">
             {/* Intro Text */}
@@ -114,7 +114,7 @@ export function Contact() {
                 dark:hover:shadow-[0_20px_50px_rgb(0,0,0,0.5),0_0_0_1px_rgb(249,170,35,0.3)]
                 transition-all duration-500 ease-out
                 backdrop-blur-sm
-                group p-8">
+                group p-5 sm:p-8">
 
                 {/* Gradient border effect */}
                 <div className="absolute inset-0 rounded-2xl
@@ -245,7 +245,7 @@ export function Contact() {
                 bg-gradient-to-r from-transparent via-primary to-transparent
                 opacity-60" />
 
-              <div className="p-8 lg:p-10 relative z-10">
+              <div className="p-5 sm:p-8 lg:p-10 relative z-10">
                 {/* Enhanced heading */}
                 <div className="space-y-2 mb-8">
                   <h3 className="text-3xl font-bold text-foreground">

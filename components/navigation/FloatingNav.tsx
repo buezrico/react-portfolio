@@ -34,7 +34,7 @@ export function FloatingNav() {
     <nav
       role="navigation"
       aria-label="Main navigation"
-      className="fixed left-1/2 -translate-x-1/2 bottom-8 z-50 flex gap-3 bg-card/70 backdrop-blur-sm px-6 py-3 rounded-full border border-primary/20 shadow-lg"
+      className="fixed left-1/2 -translate-x-1/2 bottom-4 sm:bottom-8 z-50 flex gap-1 sm:gap-3 bg-card/70 backdrop-blur-sm px-3 py-2 sm:px-6 sm:py-3 rounded-full border border-primary/20 shadow-lg"
     >
       {navItems.map((item, index) => {
         const Icon = item.icon;
@@ -46,7 +46,7 @@ export function FloatingNav() {
             href={item.id}
             onClick={(e) => handleClick(e, item.id)}
             className={cn(
-              "p-3 rounded-full transition-all duration-[400ms] hover:bg-primary/20",
+              "p-2 sm:p-3 rounded-full transition-all duration-400 hover:bg-primary/20",
               isActive && "bg-primary text-primary-foreground"
             )}
             aria-label={item.label}

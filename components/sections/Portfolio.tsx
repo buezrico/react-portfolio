@@ -26,16 +26,16 @@ export function Portfolio() {
       <div className="container-custom">
         {/* Featured Project - Large Showcase */}
         <div className="mb-16">
-          <div className="relative group overflow-hidden rounded-3xl bg-gradient-to-br from-card via-card/95 to-card border border-primary/20 shadow-2xl hover:shadow-primary/20 transition-all duration-700">
-            {/* Decorative corner accent */}
-            <div className="absolute top-0 right-0 w-40 h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-[100px] z-10" />
-            <div className="absolute top-4 right-4 w-12 h-12 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 flex items-center justify-center z-20">
-              <span className="text-primary font-bold text-sm">01</span>
+          <div className="relative group overflow-hidden rounded-2xl bg-gradient-to-br from-card via-card/95 to-card border border-primary/20 shadow-2xl hover:shadow-primary/20 transition-all duration-700">
+            {/* Decorative corner accent - hidden on mobile */}
+            <div className="absolute top-0 right-0 w-24 h-24 sm:w-40 sm:h-40 bg-gradient-to-br from-primary/20 to-transparent rounded-bl-[40px] sm:rounded-bl-[60px] z-10" />
+            <div className="absolute top-3 right-3 sm:top-4 sm:right-4 w-8 h-8 sm:w-12 sm:h-12 rounded-full bg-primary/10 backdrop-blur-sm border border-primary/20 flex items-center justify-center z-20">
+              <span className="text-primary font-bold text-xs sm:text-sm">01</span>
             </div>
 
             <div className="grid lg:grid-cols-2 gap-0">
               {/* Image Side */}
-              <div className="relative h-[300px] lg:h-[380px] overflow-hidden">
+              <div className="relative h-[220px] sm:h-[300px] lg:h-[380px] overflow-hidden">
                 <Image
                   src={featuredProject.image}
                   alt={featuredProject.title}
@@ -53,33 +53,38 @@ export function Portfolio() {
               </div>
 
               {/* Content Side */}
-              <div className="relative p-8 lg:p-12 flex flex-col justify-center">
-                <div>
-                  <h3 className="text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
+              <div className="relative p-4 sm:p-8 lg:p-12 flex flex-col justify-center overflow-hidden">
+                <div className="min-w-0">
+                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 bg-gradient-to-r from-foreground to-primary bg-clip-text text-transparent">
                     {featuredProject.title}
                   </h3>
 
-                  <p className="text-light leading-relaxed mb-6 text-base">
+                  <p className="text-light leading-relaxed mb-6 text-sm sm:text-base line-clamp-4 sm:line-clamp-none">
                     {featuredProject.description}
                   </p>
 
                   {/* Tech Stack */}
                   {featuredProject.technologies && (
-                    <div className="flex flex-wrap gap-2 mb-8">
-                      {featuredProject.technologies.map((tech) => (
+                    <div className="flex flex-wrap gap-1.5 sm:gap-2 mb-6 sm:mb-8">
+                      {featuredProject.technologies.slice(0, 4).map((tech) => (
                         <Badge
                           key={tech}
-                          className="bg-primary/15 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-3 py-1"
+                          className="bg-primary/15 text-primary border border-primary/30 hover:bg-primary hover:text-primary-foreground transition-all duration-300 px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm"
                         >
                           {tech}
                         </Badge>
                       ))}
+                      {featuredProject.technologies.length > 4 && (
+                        <Badge className="bg-muted text-muted-foreground px-2 sm:px-3 py-0.5 sm:py-1 text-xs sm:text-sm">
+                          +{featuredProject.technologies.length - 4}
+                        </Badge>
+                      )}
                     </div>
                   )}
 
                   {/* Action Buttons */}
                   <div className="flex gap-4">
-                    <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group/btn">
+                    <Button asChild size="default" className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group/btn sm:h-11 sm:px-8">
                       <a href={featuredProject.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2">
                         <span>View Live</span>
                         <BsArrowUpRight className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
@@ -121,7 +126,7 @@ export function Portfolio() {
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-card/50 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
 
                   {/* Hover Action Button */}
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <div className="absolute inset-0 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300">
                     <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-xl shadow-primary/50 group/btn">
                       <a href={project.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2">
                         <span>View Project</span>
@@ -132,7 +137,7 @@ export function Portfolio() {
                 </div>
 
                 {/* Content */}
-                <div className="p-6">
+                <div className="p-4 sm:p-6">
                   <h3 className="text-xl font-bold mb-2 text-foreground group-hover:text-primary transition-colors duration-300">
                     {project.title}
                   </h3>

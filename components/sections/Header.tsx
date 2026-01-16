@@ -15,7 +15,7 @@ export function Header() {
   };
 
   return (
-    <header className="h-[45vh] min-h-[400px] pt-20 pb-8 overflow-hidden relative">
+    <header className="h-[50vh] min-h-[350px] sm:min-h-[400px] pt-20 pb-8 overflow-hidden relative">
       {/* Social icons - LEFT SIDE with glassmorphism */}
       <div className="hidden md:flex absolute md:left-[7%] lg:left-[12.5%] top-1/2 -translate-y-1/2 flex-col gap-4 opacity-0 animate-fade-in animation-delay-800">
         <a
@@ -54,7 +54,7 @@ export function Header() {
         </h3>
 
         {/* Name with gradient text effect */}
-        <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-2 opacity-0 animate-fade-in animation-delay-200">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-2 opacity-0 animate-fade-in animation-delay-200">
           <span className="bg-gradient-to-r from-foreground via-primary to-foreground bg-clip-text text-transparent animate-gradient">
             Chibueze Rico
           </span>
@@ -67,7 +67,7 @@ export function Header() {
         </h4>
 
         {/* CTA Buttons with enhanced effects */}
-        <div className="flex gap-4 opacity-0 animate-fade-in animation-delay-600">
+        <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 opacity-0 animate-fade-in animation-delay-600">
           <Button
             asChild
             variant="outline"
