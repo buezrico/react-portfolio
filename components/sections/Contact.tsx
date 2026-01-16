@@ -131,7 +131,7 @@ export function Contact() {
                   <h3 className="text-2xl font-semibold mb-4 text-foreground">
                     Let's Work Together
                   </h3>
-                  <p className="text-light text-base leading-relaxed">
+                  <p className="text-light text-sm sm:text-base leading-relaxed">
                     Have a project in mind or want to collaborate? Feel free to reach out through any of the channels below. I'm always open to discussing new opportunities and ideas.
                   </p>
                 </div>
@@ -251,7 +251,7 @@ export function Contact() {
                   <h3 className="text-3xl font-bold text-foreground">
                     Send Me a Message
                   </h3>
-                  <p className="text-light text-base leading-relaxed">
+                  <p className="text-light text-sm sm:text-base leading-relaxed">
                     Fill out the form below and I'll get back to you within 24 hours.
                   </p>
                 </div>

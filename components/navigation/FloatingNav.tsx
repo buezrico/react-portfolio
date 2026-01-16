@@ -7,7 +7,6 @@ import { RiServiceLine } from "react-icons/ri";
 import { MdWorkOutline } from "react-icons/md";
 import { useActiveSection } from "@/hooks/useActiveSection";
 import { cn } from "@/lib/utils";
-import { ThemeToggle } from "@/components/theme/ThemeToggle";
 
 const navItems = [
   { id: "#", icon: AiOutlineHome, label: "Home" },
@@ -36,7 +35,7 @@ export function FloatingNav() {
       aria-label="Main navigation"
       className="fixed left-1/2 -translate-x-1/2 bottom-4 sm:bottom-8 z-50 flex gap-1 sm:gap-3 bg-card/70 backdrop-blur-sm px-3 py-2 sm:px-6 sm:py-3 rounded-full border border-primary/20 shadow-lg"
     >
-      {navItems.map((item, index) => {
+      {navItems.map((item) => {
         const Icon = item.icon;
         const isActive = activeSection === item.id;
 
@@ -57,9 +56,6 @@ export function FloatingNav() {
           </motion.a>
         );
       })}
-
-      {/* Theme Toggle */}
-      <ThemeToggle variant="nav" />
     </nav>
   );
 }

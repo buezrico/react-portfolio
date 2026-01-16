@@ -3,6 +3,7 @@ import { Toaster } from "sonner";
 import "./globals.css";
 import { ThemeProvider } from "@/providers/ThemeProvider";
 import { ThemeScript } from "@/components/theme/ThemeScript";
+import { ThemeToggle } from "@/components/theme/ThemeToggle";
 import { RegisterCSSProperties } from "@/components/shared/RegisterCSSProperties";
 
 export const metadata: Metadata = {
@@ -103,8 +104,13 @@ export default function RootLayout({
       <body className="antialiased">
         <RegisterCSSProperties />
         <ThemeProvider>
+          {/* Fixed Theme Toggle - top right */}
+          <div className="fixed top-4 right-4 sm:top-6 sm:right-6 z-50">
+            <ThemeToggle className="bg-card/70 backdrop-blur-sm border border-primary/20 shadow-lg rounded-full" />
+          </div>
+
           {/* Global Animated Background - covers entire page */}
-          <div className="fixed inset-0 -z-50  pointer-events-none">
+          <div className="fixed inset-0 -z-50 pointer-events-none">
             <div className="absolute top-0 -left-4 w-72 h-72 bg-primary/30 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob dark:mix-blend-normal" />
             <div className="absolute top-0 -right-4 w-72 h-72 bg-primary/20 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-2000 dark:mix-blend-normal" />
             <div className="absolute -bottom-8 left-20 w-72 h-72 bg-primary/25 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-blob animation-delay-4000 dark:mix-blend-normal" />
