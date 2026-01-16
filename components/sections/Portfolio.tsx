@@ -46,9 +46,19 @@ export function Portfolio() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-r from-card/80 via-card/40 to-transparent lg:opacity-100 opacity-60" />
 
+                {/* View Project Button - visible on mobile, hover on desktop */}
+                <div className="absolute inset-0 flex items-center justify-center opacity-100 sm:opacity-0 sm:group-hover:opacity-100 transition-opacity duration-300 z-10">
+                  <Button asChild size="lg" className="bg-primary hover:bg-primary/90 shadow-xl shadow-primary/50 group/btn">
+                    <a href={featuredProject.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2">
+                      <span>View Project</span>
+                      <BsArrowUpRight className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
+                    </a>
+                  </Button>
+                </div>
+
                 {/* Floating badge */}
-                <div className="absolute bottom-6 left-6 px-4 py-2 rounded-full bg-primary/90 backdrop-blur-md border border-primary-foreground/20 z-10">
-                  <span className="text-primary-foreground font-semibold text-sm">Featured Project</span>
+                <div className="absolute bottom-4 left-4 sm:bottom-6 sm:left-6 px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-primary/90 backdrop-blur-md border border-primary-foreground/20 z-10">
+                  <span className="text-primary-foreground font-semibold text-xs sm:text-sm">Featured Project</span>
                 </div>
               </div>
 
@@ -81,16 +91,6 @@ export function Portfolio() {
                       )}
                     </div>
                   )}
-
-                  {/* Action Buttons */}
-                  <div className="flex gap-4">
-                    <Button asChild size="default" className="bg-primary hover:bg-primary/90 shadow-lg shadow-primary/30 group/btn sm:h-11 sm:px-8">
-                      <a href={featuredProject.demo} target="_blank" rel="noreferrer" className="flex items-center gap-2">
-                        <span>View Live</span>
-                        <BsArrowUpRight className="group-hover/btn:translate-x-1 group-hover/btn:-translate-y-1 transition-transform" />
-                      </a>
-                    </Button>
-                  </div>
                 </div>
               </div>
             </div>
