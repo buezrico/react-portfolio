@@ -121,7 +121,7 @@ export const workExperiences: WorkExperience[] = [
   {
     id: 1,
     company: "MEGANET LIMITED",
-    position: "FRONTEND SOFTWARE ENGINEER",
+    position: "FULL STACK DEVELOPER",
     location: "Lagos, Nigeria",
     startDate: "Feb. 2023",
     endDate: "Nov. 2023",
