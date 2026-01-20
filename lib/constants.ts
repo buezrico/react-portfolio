@@ -6,7 +6,8 @@ import assetplus from "@/public/images/portfolio/assetplus.png";
 import valucares from "@/public/images/portfolio/valucares.png";
 import tourafrica from "@/public/images/portfolio/tourafrica.png";
 import insightproxim from "@/public/images/portfolio/insightproxim.png";
-import synproxi from "@/public/images/portfolio/synproxi.png";
+// import synproxi from "@/public/images/portfolio/synproxi.png";
+import ericgugua from "@/public/images/portfolio/ericgugua.png";
 import nkechi from "@/public/images/portfolio/nkechi.png";
 import medhub from "@/public/images/portfolio/medhub.png";
 import optimalgems from "@/public/images/portfolio/optimalgems.png";
@@ -96,13 +97,22 @@ export const portfolioProjects: PortfolioProject[] = [
       "InsightProxim Consulting provides expert guidance and solutions in business strategy and management. Tailored consulting services to help organizations achieve their goals.",
     technologies: ["Next.js", "TypeScript", "Sass"],
   },
+  // {
+  //   id: 9,
+  //   image: synproxi,
+  //   title: "SYNPROXI",
+  //   demo: "https://synproxi.vercel.app/",
+  //   description:
+  //     "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
+  //   technologies: ["Next.js", "TypeScript", "Tailwindcss"],
+  // },
   {
-    id: 9,
-    image: synproxi,
-    title: "SYNPROXI",
-    demo: "https://synproxi.vercel.app/",
+    id: 12,
+    image: ericgugua,
+    title: "ERIC GUGUA",
+    demo: "https://eric-gugua.vercel.app/",
     description:
-      "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
+      "A Portfolio website for Eric Gugua. Built with NextJs, TypeScript and Tailwind.",
     technologies: ["Next.js", "TypeScript", "Tailwindcss"],
   },
   {
