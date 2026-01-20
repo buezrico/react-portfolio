@@ -26,6 +26,15 @@ export const portfolioProjects: PortfolioProject[] = [
     technologies: ["Next.js", "TypeScript", "Tailwindcss", "Shadcn", "Zustand", "Prisma"],
   },
   {
+    id: 12,
+    image: ericgugua,
+    title: "ERIC GUGUA",
+    demo: "https://eric-gugua.vercel.app/",
+    description:
+      "A Portfolio website for Eric Gugua. Built with NextJs, TypeScript and Tailwind.",
+    technologies: ["Next.js", "TypeScript", "Tailwindcss"],
+  },
+  {
     id: 2,
     image: assetplus,
     title: "ASSETPLUS",
@@ -106,15 +115,6 @@ export const portfolioProjects: PortfolioProject[] = [
   //     "Synproxi offers free digital skills training to empower individuals with the knowledge and tools to succeed in the digital world.",
   //   technologies: ["Next.js", "TypeScript", "Tailwindcss"],
   // },
-  {
-    id: 12,
-    image: ericgugua,
-    title: "ERIC GUGUA",
-    demo: "https://eric-gugua.vercel.app/",
-    description:
-      "A Portfolio website for Eric Gugua. Built with NextJs, TypeScript and Tailwind.",
-    technologies: ["Next.js", "TypeScript", "Tailwindcss"],
-  },
   {
     id: 10,
     image: nkechi,
